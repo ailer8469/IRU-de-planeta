@@ -1,0 +1,189 @@
+// function
+@import '../base/var';
+@import '../mixins/mix';
+
+
+.open_login{	
+    display:none;
+    width:100%;
+	height:100%;
+	background-color:rgba(0, 0, 0, 0.2);
+	z-index:20;
+	position:absolute;
+}
+
+.lg_table{
+    z-index:6;
+    position: relative;
+
+    img{
+        cursor: $click;
+        position: absolute;
+        left: 70%;
+        top: 12%;
+        margin: 10px;
+        width: 20px;
+        height: 20px;
+    }
+}
+
+// 登入內容
+.lg_content{
+    @include flex(column,center,center);
+    color: white;
+
+    h1{
+    margin:120px auto 70px auto;
+    font-size: $title;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0.18em;
+    text-align: center;
+    }
+    form{
+        @include flex(column,center,center);
+    }
+
+    input{
+        margin: 10px auto;
+        appearance: none;
+    }
+    input[type=checkbox]{
+        border: 1px solid #FFFFFF;
+        height: 20px;
+        width: 20px;
+
+        &:after{
+            display: none;
+            content: '\2714';
+            color:white;
+            position: absolute;
+            font-size: 15px;
+            left: 4px;
+        }
+        &:checked:after{
+            display: block;
+        }
+    }
+
+
+
+    .account,.psw{
+        border: 1px solid #FFFFFF;
+        font-size: 14px;
+        font-weight: 200;
+        line-height: 16px;
+        letter-spacing: 0.18em;
+
+        margin: 10px auto;
+        padding: 5px;
+        padding-left: 15px;
+
+        transition: .3s;
+        &:hover {
+            transform: scale(1.1);
+        }
+
+
+        input{
+            background-color: transparent;
+            border: 0;
+            caret-color: white;
+            width: 320px;
+            padding: 10px;
+            margin-left: 20px;
+        }
+    }
+}
+.checkPsw{
+    @include flex("",center,center);
+    position: relative;
+    right: 40%;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0.2em;
+
+    span{
+        margin-left: 10px;
+    }
+}
+
+#lg_submit{
+    cursor: $click;
+    @include btn(14px,0);
+    margin-top: 110px;
+    width: 280px;
+    border: 1px solid #FFFFFF;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0.18em;
+
+    transition: .3s;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+//RWD---------------------------------------------
+@media (max-width: 768px) {
+    .lg_content .account input, .lg_content .psw input {
+        width: 260px;
+    }
+}
+
+@media (max-width: 450px) {
+    .lg_content .account input, .lg_content .psw input {
+        width: 210px;
+    }
+    .open_login .lg_content h1 {
+        margin: 70px auto;
+    }
+    .lg_table img {
+        left: 82%;
+        top: 5%;
+    }
+    .checkPsw{
+        right: 35%;
+    }
+}
+
+@media (max-width: 375px){
+    .open_login .lg_content h1 {
+        margin: 60px auto 50px auto;
+    }
+    .lg_content .account input, .lg_content .psw input {
+        width: 180px;
+    }
+    .lg_content .account, .lg_content .psw {
+        padding: 5px;
+        padding-left: 10px;
+    }
+    .checkPsw {
+        right: 29%;
+    }
+    #lg_submit {
+        margin-top: 80px;
+        width: 260px;
+    }
+}
+@media (max-width: 320px){
+    .open_login .lg_content h1 {
+        margin: 45px auto ;
+    }
+    .lg_content .account input, .lg_content .psw input {
+        width: 150px;
+        padding: 5px;
+    }
+    .lg_content .account, .lg_content .psw {
+        margin: 5px;
+    }
+    .checkPsw {
+        right: 27%;
+    }
+    #lg_submit {
+        margin-top: 65px;
+        width: 225px;
+    }
+}

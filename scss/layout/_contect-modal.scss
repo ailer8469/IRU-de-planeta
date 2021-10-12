@@ -1,0 +1,199 @@
+@import '../mixins/mix';
+
+.contect_modal{
+    display: none; 
+    position: fixed; 
+    z-index: 7;
+    padding-top: 140px; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto;
+    background: #4F4F4F80; 
+}
+.contect_ctx{
+    position: relative;
+    background-color: white;
+    clip-path: polygon(7% 0, 100% 0, 100% 100%, 0 100%, 0 11%);
+    margin: auto;
+    padding: 35px 15px;
+    border: 1px solid #888;
+    width: 400px;
+    animation-name: animatetop;
+    animation-duration: 0.5s;
+
+    .contect_close{
+    margin: 20px;
+    color: #4F4F4F;
+    position: absolute;
+    right: 0;
+    top: -10px;
+    font-size: 40px;
+    }
+    .contect_close:hover,
+    .contect_close:focus {
+    cursor: $click;
+    color: #000;
+    }
+
+    form{
+        @include flex(column,center,center);
+        h3{
+            margin: 15px auto;
+            text-align: center;
+            font-size: 21px;
+            font-weight: 300;
+            line-height: 25px;
+            letter-spacing: 0.18em;
+        }
+        input::placeholder,textarea::placeholder{
+            font-size: 14px;
+            font-weight: 200;
+            line-height: 16px;
+            letter-spacing: 0.18em;
+        }
+        input,textarea{
+            width: 370px;
+            padding:10px 0 10px 15px;
+            margin-top:10px; 
+        }
+
+        input:nth-child(5){
+            margin-top:15px;
+            &::placeholder{
+                position: absolute;
+            }
+        }
+        input[type="submit"]{
+            width: 360px;
+            height: 40px;
+            background-color:#4F4F4F;
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 16px;
+            letter-spacing: 0.18em;
+            cursor: $click;
+            transition: .3s;
+            &:hover {
+            transform: scale(1.1);
+        }
+        }
+    }   
+}
+#textarea{
+    padding-bottom: 100px;
+
+}
+
+@keyframes animatetop {
+    from {top:-200px; opacity:0}
+    to {top:0; opacity:1}
+    }
+
+//寄出通知
+.contect_modal .send_modal{
+    @include flex(column,center,center);
+    width: 300px;
+    position: relative;
+    background-color: white;
+    margin: auto;
+    padding: 10px 40px;
+    border: 1px solid #888;
+    animation-name: animatepop;
+    animation-duration: 0.5s;
+    h3{
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 19px;
+        color: $gray2;
+        padding-top: 20px;
+    }
+    p{
+        font-size: 15px;
+        font-weight: 200;
+        line-height: 18px;
+        color: $gray3;
+        margin: 10px auto 40px auto;
+    }
+}
+@keyframes animatepop {
+    from {
+        bottom:-200px;
+        opacity:0}
+    to {bottom:0; opacity:1}
+    }
+svg{
+    width: 70%;   
+}
+.diamond {
+        stroke: #4F4F4F;
+        stroke-width: 3.67px;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        fill:transparent;
+        }
+.diamondSt {
+        animation: diamondStroke 4s ease forwards;
+}
+.success-tick {
+    fill: none;
+    stroke: #4F4F4F;
+    stroke-width: 3.67px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: success-tick 3s ease 1s forwards;
+    }
+    @keyframes diamondStroke {
+    0%   { stroke-dashoffset: 1000; }
+    100%   { stroke-dashoffset: 0; }
+    }
+    
+    @keyframes success-tick {
+    0% {
+    stroke-dashoffset: 1000;
+    opacity: 1
+    }
+    100% {
+    stroke-dashoffset: 0;
+    opacity: 1
+    }
+    }
+
+
+@media (max-width: 450px){
+    .contect_ctx {
+        padding: 30px 15px;
+        width: 360px;
+    }
+    .contect_ctx form input, .contect_ctx form textarea {
+        width: 260px;
+    }
+    .contect_ctx form input[type="submit"] {
+        width: 250px;
+    }
+    .contect_modal .send_modal{
+        width: 250px;
+    }
+}
+
+@media (max-width: 400px){
+    .contect_ctx {
+        padding: 30px 15px;
+        width: 280px;
+    }
+    .contect_ctx form input, .contect_ctx form textarea {
+        width: 220px;
+    }
+    .contect_ctx form input[type="submit"] {
+        width: 210px;
+    }
+    .contect_modal .send_modal{
+        width: 220px;
+    }
+}

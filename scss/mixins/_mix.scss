@@ -1,0 +1,25 @@
+// nav
+@mixin nav($color) {
+    color:$color;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+@mixin flex($side,$justify,$align){
+    display: flex; 
+    flex-direction:$side;     
+    justify-content: $justify; 
+    align-items: $align;
+}
+
+@mixin btn($h,$w){
+        display: block;
+        text-align: center;
+        overflow: hidden;
+        position: relative;
+        padding: $h $w;
+        margin: 0 auto;
+}
