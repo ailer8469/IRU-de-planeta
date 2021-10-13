@@ -753,7 +753,7 @@ body {
     }
     .slider_box .slider_items { 
         right: -20%;
-        top: -9%; 
+        top: 0%;
         margin: 3vh 0;
         width: 570px;
         max-width: 550px;
@@ -794,7 +794,7 @@ body {
 @media (max-width: 500px) {
     .slider_box .slider_items {
         right: -10%;
-        top: -5%;
+        top: -4%;
     }
     .slider_box .slider_items .item {
         padding: 1.5vw 5vw 1.5vw 3vw;
@@ -827,7 +827,7 @@ body {
     }
     .slider_box .slider_items {
         right: -12%;
-        top:-10%;
+        top: -1%;
     }
     .slider_box .rotate {
         right: 83vw;
@@ -839,11 +839,11 @@ body {
         margin-bottom: 2.4vh;
     }
     .slider_box .slider_items {
-        right: -4%;
+        right: -10%;
     }
     .slider_box .rotate {
-        right: 94vw;
-        top: 21%;
+        right: 84vw;
+        top: 25%;
     }
     .slider_box .slider_items .slick-active + .slick-active + .slick-active {
         left: 8%;

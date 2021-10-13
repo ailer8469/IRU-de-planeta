@@ -127,9 +127,19 @@
     }
 }
 //RWD---------------------------------------------
+@media (max-width: 1200px) {
+    .open_login{	
+        height:calc( 100% - 80px );
+        bottom: 0;
+    }
+}
+
 @media (max-width: 768px) {
     .lg_content .account input, .lg_content .psw input {
         width: 260px;
+    }
+    .open_login{	
+        height:calc( 100% - 67px );
     }
 }
 

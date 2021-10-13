@@ -168,9 +168,19 @@
           transform: scale(1.1);
 }
 
+@media (max-width: 1200px) {
+  .open_login {
+    height: calc( 100% - 80px);
+    bottom: 0;
+  }
+}
+
 @media (max-width: 768px) {
   .lg_content .account input, .lg_content .psw input {
     width: 260px;
+  }
+  .open_login {
+    height: calc( 100% - 67px);
   }
 }
 
@@ -1014,7 +1024,6 @@ body {
     border: 2.38px solid #FFFFFF;
     border-radius: 11.92px;
     margin: 120px 15px 35px 15px;
-    overflow: scroll;
     height: auto;
   }
   .slide_img_pc {
