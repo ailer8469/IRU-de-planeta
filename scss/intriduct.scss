@@ -502,7 +502,7 @@ body {
         .nav_rwd{
                 display: block;
                 width: 100%;
-                position: relative;
+                position: fixed;
                 @include flex("",center,center);
                 border-bottom: 1px solid $nav_line;
                 background-color:#FFFFFF4D;
@@ -541,6 +541,7 @@ body {
         @include flex(column,"",flex-start);
     }
     .slider_box{
+        margin-top: 60px;
         width: 100vw;
         overflow: hidden;
         justify-content: flex-start;
@@ -618,7 +619,7 @@ body {
         padding: 2vw 10vw 2vw 5vw;
     }
     .slider_box .slider_title {
-        margin: 0 50px 70px 50px;
+        margin: 0 50px 60px 50px;
     }
     .slider_box .slider_items {
         margin:0;

@@ -192,7 +192,7 @@ body {
     background-image: url('../pic/aboutMember/sliderBox_bg.png');
 }
 .owl-carousel{
-    margin-top: 30px;
+    margin-top: 100px;
 }
 .owl-carousel .bg_slider_photo img {
     width: auto !important;
@@ -675,7 +675,7 @@ body {
     .nav_rwd{
             display: block;
             width: 100%;
-            position: relative;
+            position: fixed;
             @include flex("",center,center);
             border-bottom: 1px solid $nav_line;
             background-color:#FFFFFF4D;

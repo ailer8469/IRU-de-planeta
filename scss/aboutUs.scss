@@ -23,9 +23,6 @@ body {
     display: none;
 }
 // nav
-nav{
-    z-index: 99;
-}
 .nav_item li:nth-child(1) {
     background-color: #cdbf9b;
 }
@@ -35,7 +32,7 @@ nav{
     border-bottom: 1px solid $nav_line;
     position: relative;
     background-color:#FFFFFF4D;
-
+    z-index: 5;
     ul{
         @include flex("",space-between,center);
         flex-wrap: wrap;
@@ -466,10 +463,10 @@ transition: all 1s cubic-bezier(.48, .16, .15, .98);
         .nav_rwd{
                 display: block;
                 width: 100%;
-                position: relative;
+                position: fixed;
                 @include flex("",center,center);
                 border-bottom: 1px solid $nav_line;
-                background-color:#FFFFFF4D;
+                background: rgba(255, 255, 255, 0.4);
                 z-index: 20;
                 .logo{
                     cursor:$click;
@@ -567,7 +564,7 @@ transition: all 1s cubic-bezier(.48, .16, .15, .98);
     .section_2{
         border: 2.38px solid #FFFFFF;
         border-radius: 11.92px;
-        margin: 35px 15px;
+        margin: 120px 15px 35px 15px;
         overflow: scroll;
         height: auto;
     }
@@ -600,9 +597,6 @@ transition: all 1s cubic-bezier(.48, .16, .15, .98);
             line-height: 22px;
             letter-spacing: 0.2em;
         }
-    }
-    .intro_box {
-        padding: 60px 40px;
     }
 }
 @media (max-width: 768px){

@@ -79,7 +79,7 @@
 
 .lg_content input[type=checkbox]:after {
   display: none;
-  content: '\2714';
+  content: "\2714\fe0e";
   color: white;
   position: absolute;
   font-size: 15px;
@@ -250,10 +250,6 @@ body {
   display: none;
 }
 
-nav {
-  z-index: 99;
-}
-
 .nav_item li:nth-child(1) {
   background-color: #cdbf9b;
 }
@@ -269,6 +265,7 @@ nav {
   border-bottom: 1px solid #bfb29e;
   position: relative;
   background-color: #FFFFFF4D;
+  z-index: 5;
 }
 
 .nav ul {
@@ -904,7 +901,7 @@ nav {
   .nav_rwd {
     display: block;
     width: 100%;
-    position: relative;
+    position: fixed;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -919,7 +916,7 @@ nav {
         -ms-flex-align: center;
             align-items: center;
     border-bottom: 1px solid #bfb29e;
-    background-color: #FFFFFF4D;
+    background: rgba(255, 255, 255, 0.4);
     z-index: 20;
   }
   .nav_rwd .logo {
@@ -1016,7 +1013,7 @@ nav {
   .section_2 {
     border: 2.38px solid #FFFFFF;
     border-radius: 11.92px;
-    margin: 35px 15px;
+    margin: 120px 15px 35px 15px;
     overflow: scroll;
     height: auto;
   }
@@ -1047,9 +1044,6 @@ nav {
     font-size: 17px;
     line-height: 22px;
     letter-spacing: 0.2em;
-  }
-  .intro_box {
-    padding: 60px 40px;
   }
 }
 
