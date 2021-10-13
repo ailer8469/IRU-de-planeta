@@ -525,10 +525,6 @@ body {
   display: none;
 }
 
-#dot {
-  fill: rgba(177, 3, 3, 0.85);
-}
-
 .content {
   width: 100%;
   display: -webkit-box;
@@ -593,16 +589,16 @@ body {
   height: 850%;
   width: 100%;
   background: #ffffff;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
   border-radius: 150% / 50%;
   -webkit-transform: translateY(30%);
           transform: translateY(30%);
 }
 
 .enter:hover:after {
-  -webkit-transform: translateY(0%);
-          transform: translateY(0%);
+  -webkit-transform: translateY(-16%);
+          transform: translateY(-16%);
 }
 
 .enter:hover {
@@ -787,6 +783,9 @@ body {
   .cls-1:nth-child(11) {
     fill: rgba(221, 204, 172, 0.9);
   }
+  #mask image {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -809,6 +808,12 @@ body {
     top: 60%;
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg);
+  }
+  .logo {
+    padding: 8px 50px;
+  }
+  .nav_rwd .nav_bar {
+    margin: 19px;
   }
 }
 

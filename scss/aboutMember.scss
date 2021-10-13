@@ -901,6 +901,12 @@ body {
         z-index: -1;
         pointer-events: none;
     }
+    .logo {
+        padding: 8px 50px;
+    }
+    .nav_rwd .nav_bar {
+        margin: 19px;
+    }
 }
 @media (max-width: 560px){
     .oval_item{

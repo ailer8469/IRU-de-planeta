@@ -14,9 +14,9 @@ tl.reversed(!tl.reversed());
 //處理SVG的座標點
 let pt = svg.createSVGPoint();
 function getPoint(e){
-pt.x = e.clientX; 
-pt.y = e.clientY;
-return pt.matrixTransform(svg.getScreenCTM().inverse());
+    pt.x = e.clientX; 
+    pt.y = e.clientY;
+    return pt.matrixTransform(svg.getScreenCTM().inverse());
 };
 
 // 重新計算座標
@@ -28,9 +28,16 @@ gsap.to("#masker", 0.6, {
         cy:newPoint.y}, 
     ease:"power2.out"});
 };
-window.addEventListener("mousedown", mouseHandler);
-window.addEventListener("mouseup", mouseHandler);
-window.addEventListener("mousemove", mouseMove);
+ // change size
+var wdth=$(window).width();
+$(window).resize(function(){
+    wdth=$(window).width();
+});
+    window.addEventListener("mousedown", mouseHandler);
+    window.addEventListener("mouseup", mouseHandler);
+    window.addEventListener("mousemove", mouseMove);
+
+
 
 
 //background animation------------------------------------------

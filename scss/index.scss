@@ -16,13 +16,11 @@ body {
     background-position: 0%;
     animation: bg-move 40s linear infinite;
     }
-    
-    @keyframes bg-move{
-        0% {background-position: 0%;}
-        100%{background-position: 50%;}  
-        0% {background-position: 0%;}
-    }
-
+@keyframes bg-move{
+    0% {background-position: 0%;}
+    100%{background-position: 50%;}  
+    0% {background-position: 0%;}
+}
 .none{
     display: none;
 }
@@ -167,15 +165,14 @@ body {
         border-left: 1px solid $nav_color;
     }
     span{
-    font-size: 12px;
-    font-weight: 200;
-    line-height: 14px;
-    letter-spacing: 0.1em;
+        font-size: 12px;
+        font-weight: 200;
+        line-height: 14px;
+        letter-spacing: 0.1em;
     }
 }
 .login{
     margin: 0 30px;
-
     button{
         background-image: url('../pic/member/regular.svg');
         background-repeat: no-repeat;
@@ -195,22 +192,16 @@ body {
 }
 
 // content
-#dot{
-    fill:rgba(177, 3, 3, 0.85);
-}
 .content{
     width: 100%;
     @include flex(column,center,center);
     position: relative;
-
-
     h2{
         font-size: $h2;
         font-weight: 400;
         line-height: 25px;
         letter-spacing: 0.5em;
         color:#FFFFFF;
-
         margin: 120px;
         margin-bottom: 80px;
     }    
@@ -244,13 +235,13 @@ top: 0;
 height: 850%;
 width: 100%;
 background: #ffffff;
-transition: all .3s ease-in-out;
+transition: all .4s ease-in-out;
 border-radius: 150% / 50% ;
 transform: translateY(30%) ;
 }
 
 .enter:hover:after {
-transform: translateY(0%);
+transform: translateY(-16%);
 }
 .enter:hover{
     color: rgba(177, 3, 3, 0.85);
@@ -407,6 +398,10 @@ transform: translateY(0%);
 .cls-1:nth-child(11){
     fill: rgba(221, 204, 172, 0.9);
 }
+//遮罩圖消失
+#mask image{
+    display: none;
+    }
 }
 @media (max-width: 768px) {
     .content{
@@ -429,6 +424,12 @@ transform: translateY(0%);
         right: -60%;
         top: 60%;
         transform: rotate(90deg); 
+    }
+    .logo {
+        padding: 8px 50px;
+    }
+    .nav_rwd .nav_bar {
+        margin: 19px;
     }
 }
 @media (max-width: 700px) {

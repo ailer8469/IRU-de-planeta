@@ -10,27 +10,14 @@ $(function(){
                 if(wdth >1200){
                     let range=$('#range').val();
                         if(range <= 1){
-                                t1.from($('.intro_1'),1,{
-                                    y:-100,
-                                    ease:Linear,
-                                    }) 
-                                t1.to($('#line'),1,{
-                                    
-                                })
                             $('.intro_1').show();
                             $('.intro_2').hide();
                             $("input[name=carousel-3d][value='1']").prop("checked",true);
                         }else if(range <=2){ 
-                            t1.from($('.intro_2'),1,{
-                                y:-100,
-                                ease:Linear})
                             $('.intro_1,.intro_3').hide();
                             $('.intro_2').show();
                             $("input[name=carousel-3d][value='2']").prop("checked",true);
                         }else{
-                            t1.from($('.intro_3'),1,{
-                                y:-100,
-                                ease:Linear})
                             $('.intro_2').hide();
                             $('.intro_3').show();
                             $("input[name=carousel-3d][value='3']").prop("checked",true);

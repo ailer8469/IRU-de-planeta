@@ -174,12 +174,13 @@ body {
 
     .slider_title{
         @include flex("",center,center);
+        position: relative;
+        top: 60px;
         font-size: 21px;
         font-weight: 700;
         line-height: 26px;
         letter-spacing: 0.1em;
         margin: 20px auto;
-        width: 80%;
         h2{
             display: inline-block;
             color: $gray2;
@@ -617,7 +618,7 @@ body {
         padding: 2vw 10vw 2vw 5vw;
     }
     .slider_box .slider_title {
-        padding-top: 30px;
+        margin: 0 50px 70px 50px;
     }
     .slider_box .slider_items {
         margin:0;
@@ -637,7 +638,6 @@ body {
         overflow: visible;
         overflow-x: hidden;
         overflow-y: scroll;
-        height: 100%;
     }
     .content{
         height: 100%;
@@ -647,7 +647,8 @@ body {
     }
 
     .slider_wrap{
-        margin-bottom: 70px;
+        padding-bottom: 50px;
+        margin-top: 30px;
     }
     .slider_ctx {
         width: 90%;
@@ -662,7 +663,6 @@ body {
         line-height: 18px;
         padding: 8px 30px 8px 15px;
     }
-
     .slider_ctx .ctx_center .ctx_detail{
         font-size: 2.2vw;
         line-height: 3vh;
@@ -686,7 +686,7 @@ body {
     .slider_box .rotate {
         position: absolute;
         border: 1px solid rgba(229, 212, 185, 1);
-        top:20vh;
+        top: 24vh;
         right: 85vw;
         width: 600px;
         height: 600px;
@@ -752,7 +752,7 @@ body {
     }
     .slider_box .slider_items { 
         right: -20%;
-        top: -5%; 
+        top: -9%; 
         margin: 3vh 0;
         width: 570px;
         max-width: 550px;
@@ -761,6 +761,12 @@ body {
         width: 50% !important;
         margin-bottom: 2vh;
         padding: 1.5vw 20vw 1.5vw 2vw;
+    }
+    .logo {
+        padding: 8px 50px;
+    }
+    .nav_rwd .nav_bar {
+        margin: 19px;
     }
 }
 @media (max-width: 560px) {
@@ -819,10 +825,11 @@ body {
         padding: 1.5vw 3vw 1.5vw 2vw;
     }
     .slider_box .slider_items {
-        right: -8%;
+        right: -12%;
+        top:-10%;
     }
     .slider_box .rotate {
-        right: 90vw;
+        right: 83vw;
     }
 }
 @media (max-width: 380px) {
