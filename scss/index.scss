@@ -105,7 +105,8 @@ body {
         flex-wrap: wrap;
     }
     li{    
-        display: block;
+        display: flex;
+
     }
     a{
         display: flex;
@@ -131,10 +132,10 @@ body {
 }
 .nav_item{
     @include flex("",center,center);
-
     a{
         @include flex(column,center,center);
         border-right: 1px solid $nav_color;
+        width: 65px;
         padding:30px;
         position: relative;
         overflow:hidden;

@@ -67,6 +67,7 @@ body {
         @include flex(column,center,center);
         border-right: 1px solid $nav_line;
         padding:30px;
+        width: 65px;
         position: relative;
         overflow:hidden;
         transition: .3s;

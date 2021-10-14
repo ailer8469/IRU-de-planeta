@@ -395,7 +395,9 @@ body {
 }
 
 .nav li {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .nav a {
@@ -470,6 +472,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   border-right: 1px solid #FFF4CB99;
+  width: 65px;
   padding: 30px;
   position: relative;
   overflow: hidden;

@@ -375,6 +375,7 @@ body {
           align-items: center;
   border-right: 1px solid #bfb29e;
   padding: 30px;
+  width: 65px;
   position: relative;
   overflow: hidden;
   -webkit-transition: .3s;
@@ -419,7 +420,7 @@ body {
 
 .nav_item span {
   display: none;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 200;
   line-height: 14px;
   letter-spacing: 0.1em;

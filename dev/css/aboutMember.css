@@ -764,6 +764,7 @@ body {
           align-items: center;
   border-right: 1px solid #bfb29e;
   padding: 30px;
+  width: 65px;
   position: relative;
   overflow: hidden;
   -webkit-transition: .3s;
