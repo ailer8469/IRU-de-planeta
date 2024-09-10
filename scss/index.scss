@@ -1,477 +1,71 @@
 // function
+@import 'base/_reset';
 @import 'base/var';
 @import 'base/fonts'; 
 @import 'mixins/mix';
-@import 'layout/login';
 
 html{
     width: 100%;
     height: 100%;
+    cursor: none;
 }
 body {
     width: 100vw;
     height: 100%;
     overflow: hidden;
-    background: linear-gradient(to right, rgba(177, 3, 3, 0.85) 20.31%, rgba(216, 104, 67, 0.8) 80%,rgba(177, 3, 3, 0.85) 20.31% );
+    background: $body_bg;
+    background-image: url('../dev/img/bg.svg');
+    background-blend-mode: overlay;
     background-size: 200%;
     background-position: 0%;
-    animation: bg-move 40s linear infinite;
+    color: $word;
     }
-@keyframes bg-move{
-    0% {background-position: 0%;}
-    100%{background-position: 50%;}  
-    0% {background-position: 0%;}
-}
+    button{
+        border: none;
+        background-color: transparent;
+    }
+    .cursor {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #ff8c0084;
+        box-shadow:  
+        0 0 60px 30px #ff8c0084, 
+        0 0 80px 60px #ffbd6d, 
+        0 0 90px 70px transparent; 
+        pointer-events: none;
+        transition: background-color 0.1s;
+    }
+    .trail {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #ff8c0084;
+        box-shadow:  
+        0 0 60px 30px #ff8c0084, 
+        0 0 80px 60px #ffbd6d,   
+        0 0 90px 70px transparent; 
+        pointer-events: none;
+        transition: opacity 0.5s;
+    }
 .none{
     display: none;
 }
-// ball
-    .ball{
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-        position: absolute;
-    }
-    .ball_item{
-        z-index: -1;
-        position: absolute;  
-    }
-    .ball_item_1{ 
-        width: 218px;
-        left: -7%;
-        top: 24%;
-    }
-    .ball_item_2{
-        width: 345px;
-        left: 4%;
-        top: 63%;
-    }
-    .ball_item_3{
-        opacity: 0.7;
-        width: 132px;
-        left: 25%;
-        top: 20%;
-    }
-    .ball_item_4{
-        width: 210px;
-        left: 80%;
-        top: 65%;
-    }
-    .ball_item_5{
-        opacity: 0.8;
-        width: 153px;
-        right: 3.8%;
-        top: 15.9%;
-    }
-    .ball_item_6{
-        opacity: 0.8;
-        width: 303px;
-        right: -15.8%;
-        top:100%;
-    }
-    .ball_item_7{
-        opacity: 0.6;
-        width: 150px;
-        right: 30.8%;
-        top:100%;
-    }
-    .ball_item_8{
-        opacity: 0.9;
-        width: 143px;
-        right: 70.8%;
-        top:100%;
-    }
-    .ball_item_9{
-        width: 143px;
-        right: 93.8%;
-        top:100%;
-    }
-    .ball_item_10{
-        opacity: 0.8;
-        width: 180px;
-        right: 45.8%;
-        top:100%;
-    }
 
-// nav
-.nav{
+footer{
+    @include flex("",center,center);
     width: 100vw;
-    @include nav(#e6e0e0b2);
-    border-bottom: 1px solid $nav_color;
-    position: relative;
-    z-index: 5;
-
-    ul{
-        @include flex("",space-between,center);
-        flex-wrap: wrap;
-    }
-    li{    
-        display: flex;
-
-    }
-    a{
-        display: flex;
-        align-items: center;
-        color:#FFFFFFB2;
-    }
-    }
-
-
-.login li:after { display: none;}
-.logo{
-    width: 110px;
-    height: 50px;
-    padding: 15px 50px;
-    border-right: 1px solid $nav_color;
-
-    img{
-        width: 100%;
-    }
-}
-.nav_use{
-    @include flex("",center,center);
-}
-.nav_item{
-    @include flex("",center,center);
-    a{
-        @include flex(column,center,center);
-        border-right: 1px solid $nav_color;
-        width: 65px;
-        padding:30px;
-        position: relative;
-        overflow:hidden;
-        transition: .3s;
-        
-        &:hover{
-            background: #FFF4CB4D;
-            color: white;
-        }
-        &:after {
-            position: absolute;
-            transition: .3s;
-            content: '';
-            width: 0;
-            bottom: 0; 
-            right: 0;
-            height: 2px;
-            background: #f7f7f7;
-            opacity: .8;
-            left: auto;
-        }
-        &:hover::after {
-            width: 100%;
-            left: 0;
-            }
-    }
-    li:nth-child(1){
-        border-left: 1px solid $nav_color;
-    }
-    span{
-        font-size: 12px;
-        font-weight: 200;
-        line-height: 14px;
-        letter-spacing: 0.1em;
-    }
-}
-.login{
-    margin: 0 30px;
-    button{
-        background-image: url('../pic/member/regular.svg');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        width: 30px;
-        height: 30px;
-        &:hover{
-        background-image: url('../pic/member/hover.svg');
-        width: 30px;
-        height: 30px;  
-    }
-}
-}
-.nav_rwd,.nav_use_pc{
-    display: none;
-}
-
-// content
-.content{
-    width: 100%;
-    @include flex(column,center,center);
-    position: relative;
-    h2{
-        font-size: $h2;
-        font-weight: 400;
-        line-height: 25px;
-        letter-spacing: 0.5em;
-        color:#FFFFFF;
-        margin: 120px;
-        margin-bottom: 80px;
-    }    
-}
-.enter{
-    @include btn(14px,0);
-    margin-top: 200px;
-    width: 280px;
-    border: 1px solid #FFFFFF;
-    text-align: center;   
-    font-family:Roboto;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 16px;
-    letter-spacing: 0.18em;
-    outline: none;
-    overflow: hidden; 
-    position: relative;
-    color:#FFFFFF;
-    span{
-        position: relative;
-        z-index: 1;
-    }
-}
-.enter:after{
-content: "";
-position: absolute;
-left: 0;
-right: 0;
-top: 0;
-height: 850%;
-width: 100%;
-background: #ffffff;
-transition: all .4s ease-in-out;
-border-radius: 150% / 50% ;
-transform: translateY(30%) ;
-}
-
-.enter:hover:after {
-transform: translateY(-16%);
-}
-.enter:hover{
-    color: rgba(177, 3, 3, 0.85);
-}
-// mask title
-#mask{
-    height:86px;
-    width:470px;
-}
-#mask_title {
-    cursor: none;
     position: absolute;
+    bottom: 0;
+    padding: 3vh;
+    background-color:$word;
+    color: $body_bg;
 }
-#treering{
-    width: 0;
-}
-
-//line
-.line_svg{
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-    height:100%;
-    z-index: -2;
-}
-#line_bg_1,#line_bg_2{
-    position: absolute;
-}
-#line_bg_1{
-    width: 40%;
-    left: -30%;
-    top: 15%;
-    transform: rotate(60deg); 
-}
-#line_bg_2{
-    width: 50%;
-    right: -30%;
-    top: 50%;
-    transform: rotate(270deg); 
-}
-.cls{
-    fill:none;
-    stroke:rgba(245, 197, 197, 0.4);
-    stroke-width:1px;
-}
-
-//RWD---------------------------------------------
+//RWD---------------------------------------------
 @media (max-width: 1200px) {
 // bar
-    .nav{
-        display:none;
-    }
-    .nav_use_pc{
-        @include flex(column,center,left);
-        padding:100px 100px 60px 60px;
-        position: absolute;
-        bottom:0;
-        width: 50%;
-        height: 50%;
-        z-index: 10;
-        display: none;
-        li{
-            padding: 30px;
-            br{
-                color: white;
-            }
-        }
-        a,button{
-            font-size: 18px;
-            font-weight: 200;
-            line-height: 19px;
-            letter-spacing: 0.1em;  
-            color:#695B35;
-        }
-        .login_pc{
-            &::before{
-                border-top: 1px solid white;
-                display: block;
-                content: "";
-                width: 70%;
-                margin: 30px 20px;
-            }
-        }
-    }
-    .nav_rwd{
-        display: block;
-        width: 100%;
-        position: relative;
-        @include flex("",center,center);
-        border-bottom: 1px solid $nav_color;
-        z-index: 20;
-        .logo{
-            cursor:$click;
-            border-right: 0;
-        }
-        .nav_use{
-            position:absolute;
-            top:0;
-        }
-        .nav_bar_wrap{
-            position: absolute;
-            right: 0;
-            border-left: 1px solid $nav_color;
-            cursor:$click;
-        }
-        .nav_bar{
-            margin: 25px;
-            background-image: url('../pic/icon/hamburger.svg');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: contain;
-            width: 30px;
-            height: 30px;
-        }
-
-}
-//treering
-#treering{
-    overflow: hidden;
-    width: 120vh;
-    position: absolute;
-    top: -30%;
-    left:-100%;
-    z-index: -1;
-    transform: rotate(325deg);
-}
-.cls-1{
-    fill:#DDCCAC;
-    stroke:rgba(221, 204, 172, 0.3);
-    stroke-width:0.5px;
-}
-.cls-1:nth-child(1){
-    fill: rgba(221, 204, 172, 0.2);
-}
-.cls-1:nth-child(2){
-    fill: rgba(221, 204, 172, 0.3);
-}
-.cls-1:nth-child(3){
-    fill: rgba(221, 204, 172, 0.4);
-}
-.cls-1:nth-child(4){
-    fill: rgba(221, 204, 172, 0.5);
-    animation: hideshow 3s ease 4s;
-}
-.cls-1:nth-child(5),.cls-1:nth-child(6){
-    fill: rgba(221, 204, 172, 0.6);
-}
-.cls-1:nth-child(7),.cls-1:nth-child(8){
-    fill: rgba(221, 204, 172, 0.7);
-}
-.cls-1:nth-child(9),.cls-1:nth-child(10){
-    fill: rgba(221, 204, 172, 0.8);
-}
-.cls-1:nth-child(11){
-    fill: rgba(221, 204, 172, 0.9);
-}
-//遮罩圖消失
-#mask image{
-    display: none;
-    }
 }
 @media (max-width: 768px) {
-    .content{
-        h2{
-            font-size: 3vw;
-            margin:60px auto;
-            margin-top: 140px;
-        }
-        .enter{
-            margin-top: 50px;
-            width: 300px;
-            font-size: 2.7vw;
-        }
-    }
-    #line_bg_1{
-        display: none;
-    }
-    #line_bg_2{
-        width: 100%;
-        right: -60%;
-        top: 60%;
-        transform: rotate(90deg); 
-    }
-    .logo {
-        padding: 8px 50px;
-    }
-    .nav_rwd .nav_bar {
-        margin: 19px;
-    }
-}
-@media (max-width: 700px) {
-    .ball_item_1,.ball_item_4,.ball_item_5,.ball_item_8,.ball_item_9{
-        display: none;
-    }
-    .ball_item_2{
-        left: -15%;
-        top: 65%;
-    }
-    .ball_item_3{
-        left: 20%;
-        top: 9%;
-        
-    }
-    .ball_item_5{
-        right:-8%;
-        top: 35%;
-    }
-}
-@media (max-width: 500px) {
-    #mask{
-        transform: scale(0.9);  
-    }
-}
-
-@media (max-width: 420px) {
-    #mask{
-        transform: scale(0.7);  
-    }
-    .ball_item{
-        transform: scale(0.6);  
-    }
-}
-
-@media (max-width: 330px) {
-    .content .enter {
-        width: 50%;
-    }
-    #mask{
-        transform: scale(0.6);  
-    }
 }
