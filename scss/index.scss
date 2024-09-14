@@ -10,17 +10,26 @@ html{
     cursor: none;
 }
 body {
+    position: relative;
     width: 100vw;
-    height: 100%;
-    overflow: hidden;
     background: $body_bg;
-    background-image: url('../dev/img/bg.svg');
-    background-blend-mode: overlay;
-    background-size: 200%;
-    background-position: 0%;
     color: $word;
+    &::before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('../img/bg.svg');
+            background-repeat: repeat;
+            background-size: auto; 
+            background-position: top left;
+            background-blend-mode: overlay;
+            opacity: 0.1;
+            pointer-events: none; 
+            z-index: 99; 
     }
-    button{
+}
+button{
         border: none;
         background-color: transparent;
     }
@@ -50,15 +59,151 @@ body {
         pointer-events: none;
         transition: opacity 0.5s;
     }
-.none{
+.hide{
     display: none;
+}
+nav{
+    color: $nav_time;
+    width: 100vw;
+    padding: 10px 0;
+    font-size: 40px;
+    .nav_container{
+        @include flex("",space-between,center);
+        width: 100%;
+    }
+    .nav_index{
+        @include flex("",center,center);
+        button{
+            cursor: none;
+        }
+    }
+    .nav_time{
+        padding: 0 3rem;
+    }
+    .nav_year{
+    font-size: 70px;
+    }
+    .nav_md{
+        @include flex(column,center,center);
+        .nav_days,
+        .nav_times {
+            @include flex(row, space-between, center);
+            width: 100%;
+        }
+        .nav_days{
+        }
+        .nav_times{
+            text-align: center;
+            margin: 8px 0 0 2px;
+            font-weight: bold;
+            font-size: 16px;
+            letter-spacing: 0.2rem;
+        }
+        .nav_week{
+            margin-right: 10px;
+        }
+    }
+
+}
+.title_style{
+    font-size: $bgTitle;
+    line-height: 150%;
+    letter-spacing: -2.2%;
+    text-align: center;
+}
+.indexBox{
+    @include flex("",center,center);
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+}
+.index_top{
+    position: relative;
+    margin-top: 10vh;
+    width: 100%;
+}
+.bg_words{
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index:-1;
+    font-size: 30rem;
+    text-wrap: nowrap;
+    color: transparent;
+    text-shadow:0 0 15px $word;
+    opacity: .4;
+}
+.top_pic{
+    @include flex("",center,center);
+    position: relative;
+    width: calc(100% - 20px);
+    padding-bottom: 56.25%;
+    background-image: url('../img/index/top_pic.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    .index_top_title{
+        @include flex(column,center,center);
+        position: absolute;
+        bottom: 5%;
+        color: $body_bg;
+        .title_style{
+            position: relative;
+            span{
+                position: absolute;
+                left: -3rem;
+                top: 3rem;
+            }
+            span:nth-child(2){
+                left: unset;
+                right: -3rem;
+            }
+        }
+        h2{
+            margin-top: -3vh;
+            font-size: $smTitle;
+            letter-spacing: 1vw;
+       }
+    }
+}
+.index_about{
+    @include flex("",center,center);
+}
+.about_textbox{
+    background-color: #fff;
+    @include flex(column,center,stretch);
+    text-align: center;
+    padding: 20px 10px;
+    width: 25vw;
+    height: 25vw;
+    font-size: $text;
+    hr{
+        border: none; 
+        border-top: 1px solid $word; 
+        width: 100%; 
+        margin: 10px 0; 
+    }
+    .text_title{
+        font-size: 7vw;
+    }
+    .text_title,.text_intro,.text_jobname{
+        position: relative;
+        margin: 10px 0;
+    }
+    .text_jobname{
+        @include flex("",center,center);
+    }
+    .text_intro{
+        text-align: justify;
+    }
 }
 
 footer{
     @include flex("",center,center);
     width: 100vw;
-    position: absolute;
-    bottom: 0;
+    position: relative;
     padding: 3vh;
     background-color:$word;
     color: $body_bg;
