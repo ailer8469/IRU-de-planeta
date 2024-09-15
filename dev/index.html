@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/icon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <!-- css -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/index.css">
@@ -95,24 +98,24 @@
                         IRU’s PLANETA
                         <span>*</span>
                     </div>
-                    <h2>Front-end developer</h2>
+                    <h2>FRONT-END DEVELOPER</h2>
                 </div>
             </div>
         </div>
         <!-- 關於我 -->
         <div class="index_about indexBox">
             <!-- 左邊文字區 -->
-            <div class="about_textbox">
+            <div id="openAboutme" class="about_textbox">
                 <hr>
                 <h1 class="text_title">ABOUT ME</h1>
                 <hr>
                 <div class="text_jobname">
-                    <h2>Front-end developer</h2>
+                    <h2>FRONT-END DEVELOPER</h2>
                     <h3>DESIGNER</h3>
                 </div>
                 <hr>
                 <div class="text_intro">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis tempore debitis cumque hic neque nesciunt quia. Ipsum eum omnis obcaecati.
+                    我是IRU，魏嘉妘，畢業於中國醫藥大學的醫務管理系。在2021年，我踏上了工程師的學習之旅。
                 </div>
                 <hr>
             </div>
@@ -124,7 +127,55 @@
                         <img src="img/icon/icon_exit.svg" alt="">
                     </div>
                     <div class="about_box">
-                        <h1>ABOUT IRU</h1>
+                        <hr>
+                        <h1>ABOUT IRU’s PlANETA</h1>
+                        <div class="grid-container">
+                            <!-- 第一行 -->
+                            <div class="col-1">
+                                <span>⟡⟡⟡⟡⟡</span>
+                                <span>TAIWANESE</span></div>
+                            <div class="col-2">IRU 魏嘉妘</div>
+                            <div class="col-3">
+                                <span>6月9日  雙子座</span><span>⟡⟡⟡⟡⟡</span>
+                                </div>             
+                            <!-- 第二行 -->
+                            <div class="col-4">
+                                <img src="img/index/1.jpg" alt="">
+                            </div>
+                            <div class="col-5">
+                                <p>
+                                    學歷：<br> 
+                                    2021－Tibame Wep/app前端工程師養成班 畢業<br>
+                                    2017－中國醫藥大學 醫務管理學系 畢業
+                                </p>
+                                <p>
+                                    工作經歷：<br>2021/08～2024/02 <br>跳跳網頁設計公司 前端工程師<br>2018～2020<br>中國醫藥大學附設醫院 病歷管理室 疾病管理師<br>2015~2017<br>私人數學家教</p>
+                                    
+                                <p>語言能力：<br>中文母語、英文TOEFL82級分（非累次）、西文DELE中級證書</p> 
+                            </div>
+                            <!-- 第三行 -->
+                            <div class="col-6">
+                                <h3>前端技術</h3>
+                                <p>HTML、CSS、SASS、JavaScript、JQuery、Vue.js、Three.js、a-frame
+                                </p>
+                            </div>
+                            <div class="col-7">
+                                <h3>後端技術</h3>
+                                <p>PHP、MySQL</p>
+                            </div>
+                            <div class="col-8">
+                                <h3>設計</h3>
+                                <p>Photoshop、XD、figma、Lightroom、CLIP STUDIO PAINT</p>
+                            </div>
+                    
+                            <!-- 第四行 -->
+                            <div class="col-9">9</div>
+                    
+                            <!-- 第五行 -->
+                            <div class="col-10">10</div>
+                            <div class="col-11">11</div>
+                            <div class="col-12">12</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -179,7 +230,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="index_work_model model">
+            <div class="index_work_model hide">
                 <div class="work_container">
                     <div class="exit">
                         <img src="img/icon/icon_exit.svg" alt="">
@@ -264,7 +315,8 @@
     </div> -->
 
     <!-- javsScrips -->
-    <script src="js/layout/cursor.js                        "></script>
+    <script src="js/layout/cursor.js"></script>
+    <script src="js/layout/model.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>
