@@ -1,23 +1,13 @@
 $(document).ready(function() {
-  $('body').append('<div class="cursor"></div>');
-
   $(document).on('mousemove', function(e) {
-    $('.cursor').css({
-      top: e.pageY + 'px',
-      left: e.pageX + 'px'
-    });
+    $(':root').css('--mouse-x', `${e.pageX}px`);
+    $(':root').css('--mouse-y', `${e.pageY}px`);
+  });
 
-    var $trail = $('<div class="trail"></div>').appendTo('body');
-    $trail.css({
-      top: e.pageY + 'px',
-      left: e.pageX + 'px'
-    });
-
-    setTimeout(function() {
-      $trail.css('opacity', '0');
-      setTimeout(function() {
-        $trail.remove();
-      }, 500);
-    }, 0);
+  $(document).on('mouseenter', function() {
+    var $el = $(this);
+    var fs = $el.css('font-size');
+    var lh = $el.css('line-height');
+    $(':root').css('--cursor-height', `calc(${fs} + (${lh}/4))`);
   });
 });
