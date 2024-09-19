@@ -12,4 +12,12 @@ $(function(){
             $('.nav_model').fadeOut();
         }
     });
+
+
+    $('.goToSomewhere').click(function(e) {
+          e.preventDefault();
+          $('body, html').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+          }, 750);
+    });
 });

@@ -26,7 +26,8 @@
                     2023
                 </div>
                 <div class="nav_index">
-                    <span id="goToAbout">ABOUT</span>
+                    <a href="#index_about" class="goToSomewhere"><span >ABOUT</span></a>
+                    
                     <button class="svg_button">
                         <svg xmlns="http://www.w3.org/2000/svg" width="82" height="82" viewBox="0 0 82 82" fill="none"
                         class="icon icon_default">
@@ -38,7 +39,8 @@
                             <circle cx="41" cy="41" r="7" stroke="#4F709C" stroke-width="2"/>
                         </svg>
                     </button>
-                    <span id="goToWork">WORK</span>
+                    <a href="#index_works" class="goToSomewhere"><span >WORK</span></a>
+                    
                 </div>
                 <div class="nav_time nav_md inIndex">
                     <div class="nav_days">
@@ -64,8 +66,9 @@
             <div class="nav_model">
                 <div class="nav_box">
                     <ul class="nav_list">
-                        <li>ABOUT</li>
-                        <li>WORKS</li>
+                        <li><a href="#index_about" class="goToSomewhere">ABOUT</a>
+                            </li>
+                        <li><a href="#index_works" class="goToSomewhere">WORKS</a></li>
                     </ul>
                     <div class="nav_contact contact">
                         <a href="">
@@ -111,7 +114,7 @@
             </div>
         </div>
         <!-- 關於我 -->
-        <div class="index_about indexBox">
+        <div class="index_about indexBox" id="index_about">
             <!-- 左邊文字區 -->
             <div id="openAboutme" class="about_textbox">
                 <hr>
@@ -197,7 +200,7 @@
             </div>
         </div>
         <!-- 作品集 -->
-        <div class="index_works indexBox">
+        <div class="index_works indexBox" id="index_works">
             
 
             <button class="see_all_works">

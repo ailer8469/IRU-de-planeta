@@ -150,7 +150,7 @@ body {
 
 .about_container::-webkit-scrollbar-track {
   border-radius: 10px;
-  background: #ede9d4;
+  background: #ece9dc;
   border: 1px solid #ccc;
 }
 
@@ -407,7 +407,7 @@ body {
   position: relative;
   width: 100vw;
   overflow-x: hidden;
-  background: #ede9d4;
+  background: #ece9dc;
   color: #4F709C;
   --show-cursor: none;
   cursor: none;
@@ -415,13 +415,13 @@ body {
 
 body::-webkit-scrollbar {
   width: 10px;
-  background-color: #ede9d4;
+  background-color: #ece9dc;
   opacity: .3;
 }
 
 body::-webkit-scrollbar-track {
   border-radius: 10px;
-  background: #ede9d4;
+  background: #ece9dc;
   border: 1px solid #ccc;
   opacity: .3;
 }
@@ -454,8 +454,8 @@ body::before {
   background-repeat: repeat;
   background-size: auto;
   background-position: top left;
-  background-blend-mode: overlay;
-  opacity: 0.05;
+  background-blend-mode: screen;
+  opacity: 0.1;
   pointer-events: none;
   z-index: 999;
 }
@@ -486,16 +486,23 @@ body::after {
   -webkit-backdrop-filter: blur(3px);
 }
 
+a {
+  text-decoration: none;
+  color: unset;
+}
+
 button {
   border: none;
   background-color: transparent;
 }
 
 nav {
+  position: fixed;
   color: #213555;
   width: 100vw;
   padding: 10px 0;
   font-size: 40px;
+  z-index: 99;
 }
 
 nav .nav_container {
@@ -529,6 +536,11 @@ nav .nav_index {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+nav .nav_index a {
+  text-decoration: none;
+  color: #213555;
 }
 
 nav .nav_index .svg_button {
@@ -799,7 +811,7 @@ main {
 
 .index_top {
   position: relative;
-  margin-top: 5%;
+  margin-top: 10%;
   width: 100%;
 }
 
@@ -834,6 +846,7 @@ main {
           align-items: center;
   position: relative;
   width: calc(100% - 60px);
+  height: 80%;
   padding-bottom: 56.25%;
   background-image: url("../img/index/top_pic.svg");
   background-repeat: no-repeat;
@@ -857,7 +870,7 @@ main {
           align-items: center;
   position: absolute;
   bottom: 5%;
-  color: #ede9d4;
+  color: #ece9dc;
 }
 
 .top_pic .index_top_title .title_style {
@@ -1085,7 +1098,7 @@ footer {
   position: relative;
   padding: 3vh;
   background-color: #4F709C;
-  color: #ede9d4;
+  color: #ece9dc;
 }
 
 footer .footer_logo {
