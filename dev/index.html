@@ -22,24 +22,25 @@
     <header>
         <nav>
             <div class="nav_container">
-                <div class="nav_time nav_year">
+                <div class="nav_time nav_year inIndex">
                     2023
                 </div>
                 <div class="nav_index">
                     <span id="goToAbout">ABOUT</span>
-                    <button>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="82" height="82" viewBox="0 0 82 82" fill="none">
+                    <button class="svg_button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="82" height="82" viewBox="0 0 82 82" fill="none"
+                        class="icon icon_default">
                             <rect x="40.7725" y="33.1464" width="10.7854" height="10.7854" transform="rotate(45 40.7725 33.1464)" fill="#213555"/>
                             <circle cx="41" cy="41" r="22" stroke="#213555" stroke-width="2"/>
                             </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="82" height="82" viewBox="0 0 82 82" fill="none" class="hide">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="82" height="82" viewBox="0 0 82 82" fill="none" class="icon icon_hidden">
                             <rect x="40.7725" y="10.8361" width="42.3369" height="42.3369" rx="17" transform="rotate(45 40.7725 10.8361)" stroke="#4F709C" stroke-width="2"/>
                             <circle cx="41" cy="41" r="7" stroke="#4F709C" stroke-width="2"/>
                         </svg>
                     </button>
                     <span id="goToWork">WORK</span>
                 </div>
-                <div class="nav_time nav_md">
+                <div class="nav_time nav_md inIndex">
                     <div class="nav_days">
                         <div class="nav_months">
                             JAN
@@ -60,9 +61,9 @@
                 </div>
             </div>
             <!-- opened -->
-            <div class="nav_model hide">
+            <div class="nav_model">
                 <div class="nav_box">
-                    <ul>
+                    <ul class="nav_list">
                         <li>ABOUT</li>
                         <li>WORKS</li>
                     </ul>
@@ -78,8 +79,15 @@
                         </a>
                     </div>
                 </div>
-                <div class="nav_circle exit ">
-                    <img src="img/icon/nav_exit.svg" alt="">
+                <div class="nav_circle">
+                    <svg viewBox="-50 -50 100 100" width="150" height="150">
+                        <path d="M 0,20 a 20,20 0 1,1 0,1 z" id="circle" />
+                        <text class="circle-text">
+                            <textPath href="#circle">
+                                IRU’s PLANETA
+                            </textPath>
+                        </text>
+                    </svg>
                 </div>
             </div>
         </nav>
@@ -323,6 +331,7 @@
     </div> -->
 
     <!-- javsScrips -->
+    <script src="js/layout/bar.js"></script>
     <script src="js/layout/cursor.js"></script>
     <script src="js/layout/model.js"></script>
     <script src="js/index.js"></script>

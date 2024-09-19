@@ -1,7 +1,15 @@
 $(function(){ 
-    $('.nav_bar').click(function(){
-        $('.nav_use_pc').fadeToggle(700).css({
-            'position': 'fixed',
-        })
+    $('.svg_button').click(function(){
+        $('.nav_model').fadeIn(); 
     })
+
+    $('.nav_circle').click(function(){
+        $('.nav_model').fadeOut();
+    })
+
+    $(document).click(function(event) {
+        if (!$(event.target).closest('.svg_button, .nav_model').length) {
+            $('.nav_model').fadeOut();
+        }
+    });
 });
