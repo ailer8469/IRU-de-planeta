@@ -1,7 +1,7 @@
 $(document).ready(function() {
     var $click = $('#openAboutme');
     let $model = $('.about_model');
-    var $exit = $('.exit');
+    var $exit = $('#about_exit');
 
     // 按鈕點擊事件，顯示模態框
     $click.on('click', function() {
@@ -21,5 +21,16 @@ $(document).ready(function() {
             $model.toggleClass("animate").css('pointerEvents','none');
             $('body').css('overflow', ''); 
         }
+    });
+
+    $('.see_all_works').on('click', function() {
+        $('.allWords_page').fadeIn(1000);
+        $(this).fadeOut(1000);
+    });
+    
+    $('#project_exit').on('click', function() {
+        $('.allWords_page').fadeOut(1000, function() {
+            $('.see_all_works').fadeIn(1000);
+        });
     });
 });

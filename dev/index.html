@@ -20,6 +20,7 @@
 </head> 
 <body>
     <header>
+        <!-- https://codepen.io/RSH87/pen/rmgYbo -->
         <nav>
             <div class="nav_container">
                 <div class="nav_time nav_year inIndex">
@@ -134,7 +135,7 @@
             <div class="about_library"></div>
             <div class="about_model model">
                 <div class="about_container">
-                    <div class="exit">
+                    <div class="exit" id="about_exit">
                         <img src="img/icon/icon_exit.svg" alt="">
                     </div>
                     <div class="about_box">
@@ -201,13 +202,11 @@
         </div>
         <!-- 作品集 -->
         <div class="index_works indexBox" id="index_works">
-            
-
             <button class="see_all_works">
                 SEE ALL WORKS
             </button>
             <div class="allWords_page">
-                <div class="exit">
+                <div class="exit" id="project_exit">
                     <img src="img/icon/icon_exit.svg" alt="">
                 </div>
                 <ul>
@@ -249,14 +248,14 @@
                     </li>
                 </ul>
             </div>
-            <div class="index_work_model hide">
+            <div class="index_work_model model">
                 <div class="work_container">
-                    <div class="exit">
+                    <div class="exit" id="works_exit">
                         <img src="img/icon/icon_exit.svg" alt="">
                     </div>
                     <div class="work_box">
                         <div class="work_topper_pic">
-                            <img src="" alt="">
+                            <img src="img/works/1.png" alt="">
                         </div>
                         <div class="work_context">
                             <div class="work_text">
@@ -273,8 +272,10 @@
                             </div>
                             <div class="work_library">
                                 <div class="library_box">
-                                    <img src="" alt="">
-                                    <img src="" alt="">
+                                    <img src="img/works/2.png" alt="">
+                                </div>
+                                <div class="library_box">
+                                    <img src="img/works/3.png">
                                 </div>
                                 <span class="work_detail">
                                     OO有限股份公司設計<br>
@@ -282,7 +283,6 @@
                                 </span>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
             </div>
@@ -308,31 +308,6 @@
         </div>
 
     </footer>
-    <!-- login modal -->
-    <!-- <div class="open_login">
-        <div class="lg_table">
-            <img src="pic/icon/close.svg" id="lg_close">
-            <div class="lg_content">
-                <h1>登入</h1>
-                <form action="">
-                    <div class="account">
-                        帳號<input type="text" name="account" id="account">
-                    </div>
-
-                    <div class="psw">
-                        密碼<input type="text" name="psw" id="psw">
-                    </div>
-                    <div class="checkPsw">
-                        <input type="checkbox" name="checkPsw" id="checkPsw">
-                        <span>記住密碼</span>
-                    </div>
-                    
-                    <input type="submit" value="確認送出" id="lg_submit">
-                </form>
-            </div>
-        </div>
-    </div> -->
-
     <!-- javsScrips -->
     <script src="js/layout/bar.js"></script>
     <script src="js/layout/cursor.js"></script>

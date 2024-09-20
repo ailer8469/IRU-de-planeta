@@ -6,7 +6,6 @@
 @import 'layout/_model';
 
 *, *::before, *::after { box-sizing:border-box }
-
 :root {
     --cursor-height: 80px;
 }
@@ -419,36 +418,48 @@ main{
     }
 }
 .index_works{
+    position: relative;
     flex-direction: column;
     .see_all_works{
-        padding: 10px 25px;
-        font-family: $font-family-primary;
-        font-size: 36px;
-        color: $word;
-        border: 1px solid $word;
-        border-radius: 30px;
-        &:hover,&:focus{
-            color:$word_hover;
-            border: 1px solid $word_hover;
-            text-shadow: 0 0 15px rgba(0, 0, 0, 0.2); 
-        }
+        @include btn();
+        position: absolute;
+        right: 10%;
+        top: 10%;
     }
 }
 .allWords_page{
+    display: none;
     position:relative;
-    background-color: aqua;
+    margin-bottom: 10vw;
     width: 80%;
     .exit{
         position: absolute
     }
     ul{
+        display: inline-block;
+        width: 50vw;
+        margin: 5vw auto;
         font-size: 5vw;
         li{
-            padding: 10px;
+            border-top: 1px solid $word;
+            padding: 20px 10px;
+            transition: all .7s ease;
+            &:hover,&:focus{
+                color: $word_hover;
+                text-shadow:$hover; 
+                span:nth-child(2){
+                    transform: translateX(-50px);
+                }
+            }
+        }
+        li:nth-last-child(1){
+            border-bottom: 1px solid $word;
+        }
+        span{
+            transition: all .7s ease;
         }
         a{
             @include flex("",space-between,center);
-            width: 70%;
             text-decoration: none
         }
     }
