@@ -30,6 +30,27 @@
             script.src = "https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js";
             document.head.appendChild(script);
         }
+        // loading
+        $(function(){
+            const totalLoads = $('.load').length;
+            const fadeInDuration = 100;
+            const waitDuration = 300;
+            $('body').waitForImages({
+                waitForAll: true, 
+                each: function(loaded, count, success) {
+                }, 
+                finished: function() {
+                    $('.load').each(function(index) {
+                        const currentLoad = $(this);
+                        currentLoad.delay(index * (fadeInDuration + waitDuration)).fadeTo(fadeInDuration, 1).delay(waitDuration).fadeTo(fadeInDuration, 0);
+                    });
+                    // 等待所有元素完成後隱藏 loading 頁面
+                    setTimeout(function() {
+                        $('#loading').fadeOut(500);
+                    }, totalLoads * (fadeInDuration + waitDuration)); // 計算總時間
+                    }
+                });
+        });
     </script>
         <!--▼ loading ▼-->
         <div id="loading">
@@ -193,7 +214,7 @@
                                     2017－中國醫藥大學 醫務管理學系 畢業
                                 </p>
                                 <p>
-                                    工作經歷：<br>2021/08～2024/02 <br>跳跳網頁設計公司 前端工程師<br>2018～2020<br>中國醫藥大學附設醫院 病歷管理室 疾病管理師<br>2015~2017<br>私人數學家教</p>
+                                    工作經歷：<br>2021/08～2024/02 <br>跳跳網頁設計公司 前端工程師組長<br>2018～2020<br>中國醫藥大學附設醫院 病歷管理室 疾病管理師<br>2015~2017<br>私人數學家教</p>
                                     
                                 <p>語言能力：<br>中文母語、英文TOEFL82級分（非累次）、西文DELE中級證書</p> 
                             </div>
@@ -213,19 +234,20 @@
                             </div>
                     
                             <!-- 第四行 -->
-                            <div class="col-9">9</div>
+                            <div class="col-9">Let’s make some waves.</div>
                     
                             <!-- 第五行 -->
                             <div class="col-10">
-                                從小我對創造和創新充滿熱情。在個人專案中，我不斷挑戰自我，最終在設計競賽中脫穎而出，獲得最佳設計獎。雖然我的設計背景並不專業，但我在大型活動中擔任幹部，成功負責資料庫整理和即時問題處理，鍛煉了我卓越的分類和計劃能力。
+                                我是IRU，魏嘉妘。<br>畢業於中國醫藥大學醫務管理系。自2021年起，我全心投入前端工程師的學習與實踐，展開了一段精彩的科技冒險。
+                                <br>
+                                從小我就對創造和創新充滿熱情。<br>在個人專案中，挑戰使用新穎的元素和設計手法、參考各國的精湛作品，最終在應屆設計競賽中脫穎而出，獲得最佳設計獎。<br>
+                                雖然設計背景並非專科，但在求學過程中皆在大型活動中擔任幹部，鍛煉了個人卓越的控管及計劃能力。
                             </div>
                             <div class="col-11">
-                                大學時期，我加入電影社，為宣傳網站設計貢獻UI/UX專業知識，並對前端領域產生了濃厚的興趣。在緯育前端班的學習中，我迅速掌握了前端技能，並涉獵了PHP和MySQL等後端技術。
-正式成為前端工程師後，我有幸加入了一個極具創新精神的團隊。我們勇於探索未曾嘗試的技術和視覺藝術，涵蓋了從傳統產業到NFT領域的多元案例。我參與了3D與環景技術的應用（如three.js、A-frame和krpano），這些經歷大大提升了我的設計和編碼能力。
-
+                                在大學期間，我加入了電影社，為宣傳網站設計貢獻了我的UI/UX專業知識，這讓我對前端領域產生了濃厚的興趣。<br>在緯育前端班的學習中，我迅速掌握了前端技能，並開始接觸PHP和MySQL等後端技術，負責畢業專案中的資料庫等重要項目。這段學習過程讓我對技術有了更深入的理解和熱愛。
                             </div>
                             <div class="col-12">
-                                我熱切希望未來能創作出更多獨具風格的作品，並在前端工程領域中不斷突破自我，與大家一起成長，成為卓越的工程師。 
+                                成為前端工程師後，我很幸運地加入了一個極具創新精神的團隊。<br>我們勇於探索未曾嘗試的技術和視覺藝術，涵蓋了從傳統產業到NFT領域的多元案例。我參與了3D與環景技術的應用（如three.js、A-frame和krpano），這些經歷大大提升了我的設計和編碼能力。<br>在入職的第三年，很榮幸地成為前端工程師的組長。<br>未來，我懷著熱切的期望，希望能創作出更多獨具風格的作品，持續在前端工程領域中突破自我，與大家共同成長。 
                             </div>
                         </div>
                     </div>
@@ -344,7 +366,6 @@
 
     </footer>
     <!-- javsScrips -->
-    <script src="js/layout/loading.js"></script>
     <script src="js/layout/bar.js"></script>
     <script src="js/layout/cursor.js"></script>
     <script src="js/layout/model.js"></script>
