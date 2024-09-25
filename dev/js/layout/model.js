@@ -24,13 +24,19 @@ $(document).ready(function() {
     });
 
     $('.see_all_works').on('click', function() {
-        $('.allWords_page').fadeIn(1000);
-        $(this).fadeOut(1000);
+        $('#carousel').addClass('hidden');
+        $(this).hide();
+        setTimeout(function(){
+            $('.allWords_page').fadeIn();
+        },1000);
     });
     
     $('#project_exit').on('click', function() {
         $('.allWords_page').fadeOut(1000, function() {
             $('.see_all_works').fadeIn(1000);
         });
+        setTimeout(function(){
+            $('#carousel').removeClass('hidden');
+        },1000);
     });
 });

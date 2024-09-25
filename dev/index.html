@@ -30,32 +30,38 @@
             script.src = "https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js";
             document.head.appendChild(script);
         }
-        // loading
-        $(function(){
-            const totalLoads = $('.load').length;
-            const fadeInDuration = 100;
-            const waitDuration = 300;
-            $('body').waitForImages({
-                waitForAll: true, 
-                each: function(loaded, count, success) {
-                }, 
-                finished: function() {
-                    $('.load').each(function(index) {
-                        const currentLoad = $(this);
-                        currentLoad.delay(index * (fadeInDuration + waitDuration)).fadeTo(fadeInDuration, 1).delay(waitDuration).fadeTo(fadeInDuration, 0);
-                    });
-                    // 等待所有元素完成後隱藏 loading 頁面
-                    setTimeout(function() {
-                        $('#loading').fadeOut(500);
-                    }, totalLoads * (fadeInDuration + waitDuration)); // 計算總時間
-                    }
-                });
+
+        $(document).ready(function() {
+            const currentYear = new Date().getFullYear();
+            $('#currentYear').text(currentYear);
+
+            const monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+            const currentMonth = new Date().getMonth();
+            $('#currentMonth').text(monthNames[currentMonth]);
+
+            const currentDay = String(new Date().getDate()).padStart(2, '0');
+            $('#currentDay').text(currentDay);
+
+            const weekNames = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+            const currentWeek = new Date().getDay();
+            $('#currentWeek').text(weekNames[currentWeek]);
+
+            function updateTime() {
+                const now = new Date();
+                const hours = String(now.getHours()).padStart(2, '0'); 
+                const minutes = String(now.getMinutes()).padStart(2, '0'); 
+                $('#currentTime').text(`${hours}:${minutes}`);
+            }
+            $(document).ready(function() {
+                updateTime(); 
+                setInterval(updateTime, 60000);
+            });
         });
     </script>
         <!--▼ loading ▼-->
-        <div id="loading">
-            <!-- 背景文字 -->
-            <div class="bg_words title_style">
+        <!-- <div id="loading">
+            <!--背景文字 -->
+            <!-- <div class="bg_words title_style">
                 IRU’s PLANETA
             </div>
             <div class="loadpage" id="loadpage">
@@ -67,14 +73,15 @@
             </div>
             <div class="footer_logo">
                 IRU’S PLANETA
-            </div>
-        </div> 
+            </div> -->
+        <!-- </div>--> 
     <!--▲ loading ▲-->
     <header>
+        <!-- https://codepen.io/jscottsmith/pen/VjPaLO -->
         <!-- https://codepen.io/RSH87/pen/rmgYbo -->
         <nav>
             <div class="nav_container">
-                <div class="nav_time nav_year inIndex">
+                <div class="nav_time nav_year inIndex" id="currentYear">
                     2023
                 </div>
                 <div class="nav_index">
@@ -91,24 +98,24 @@
                             <circle cx="41" cy="41" r="7" stroke="#4F709C" stroke-width="2"/>
                         </svg>
                     </button>
-                    <a href="#index_works" class="goToSomewhere"><span >WORK</span></a>
-                    
+                    <a href="#index_works" class="goToSomewhere"><span >WORK</span></a> 
                 </div>
                 <div class="nav_time nav_md inIndex">
                     <div class="nav_days">
-                        <div class="nav_months">
+                        <div class="nav_months" id="currentMonth">
                             JAN
                         </div>
                         :
-                        <div class="nav_day">
+                        <div class="nav_day"
+                        id="currentDay">
                             01
                         </div>
                     </div>
                     <div class="nav_times">
-                        <div class="nav_week">
+                        <div class="nav_week" id="currentWeek">
                             MON
                         </div>
-                        <div class="nav_clock">
+                        <div class="nav_clock" id="currentTime">
                             00:00
                         </div>
                     </div>
@@ -184,7 +191,6 @@
             </div>
             <!-- 右邊照片輪播 -->
             <div class="about_library">
-                <!-- https://codepen.io/HighFlyer/pen/GRLZYKw -->
             </div>
             <div class="about_model model">
                 <div class="about_container">
@@ -234,20 +240,21 @@
                             </div>
                     
                             <!-- 第四行 -->
-                            <div class="col-9">Let’s make some waves.</div>
+                            <div class="col-9">
+                                <h4>Let’s make some waves.</h4></div>
                     
                             <!-- 第五行 -->
-                            <div class="col-10">
-                                我是IRU，魏嘉妘。<br>畢業於中國醫藥大學醫務管理系。自2021年起，我全心投入前端工程師的學習與實踐，展開了一段精彩的科技冒險。
-                                <br>
-                                從小我就對創造和創新充滿熱情。<br>在個人專案中，挑戰使用新穎的元素和設計手法、參考各國的精湛作品，最終在應屆設計競賽中脫穎而出，獲得最佳設計獎。<br>
+                            <div class="col-10 myword">
+                                我是IRU，魏嘉妘。<br>畢業於中國醫藥大學醫務管理系。<br>自2021年起，我全心投入前端工程師的學習與實踐，展開了一段精彩的科技冒險。
+                                <br><br>
+                                從小我就對創造和創新充滿熱情。<br>在個人專案中，挑戰使用新穎的元素和設計手法、參考各國的精湛作品，最終在應屆設計競賽中脫穎而出，獲得最佳設計獎。<br><br>
                                 雖然設計背景並非專科，但在求學過程中皆在大型活動中擔任幹部，鍛煉了個人卓越的控管及計劃能力。
                             </div>
-                            <div class="col-11">
-                                在大學期間，我加入了電影社，為宣傳網站設計貢獻了我的UI/UX專業知識，這讓我對前端領域產生了濃厚的興趣。<br>在緯育前端班的學習中，我迅速掌握了前端技能，並開始接觸PHP和MySQL等後端技術，負責畢業專案中的資料庫等重要項目。這段學習過程讓我對技術有了更深入的理解和熱愛。
+                            <div class="col-11 myword">
+                                在大學期間，我加入了電影社，為宣傳網站設計貢獻了我的UI/UX專業知識，這讓我對前端領域產生了濃厚的興趣。<br><br>在緯育前端班的學習中，我掌握了前端技能，並開始接觸PHP和MySQL等後端技術，負責畢業專案中的資料庫等重要項目。<br><br>這段學習過程讓我對技術有了更深入的理解和熱愛。
                             </div>
-                            <div class="col-12">
-                                成為前端工程師後，我很幸運地加入了一個極具創新精神的團隊。<br>我們勇於探索未曾嘗試的技術和視覺藝術，涵蓋了從傳統產業到NFT領域的多元案例。我參與了3D與環景技術的應用（如three.js、A-frame和krpano），這些經歷大大提升了我的設計和編碼能力。<br>在入職的第三年，很榮幸地成為前端工程師的組長。<br>未來，我懷著熱切的期望，希望能創作出更多獨具風格的作品，持續在前端工程領域中突破自我，與大家共同成長。 
+                            <div class="col-12 myword">
+                                成為前端工程師後，我很幸運地加入了一個極具創新精神的團隊。<br>我們勇於探索未曾嘗試的技術和視覺藝術，涵蓋了從傳統產業到NFT領域的多元案例。我參與了3D與環景技術的應用（如three.js、A-frame和krpano），這些經歷大大提升了我的設計和編碼能力。<br><br>在入職的第三年，很榮幸地成為前端工程師的組長。<br><br>未來，我懷著熱切的期望，希望能創作出更多獨具風格的作品，持續在前端工程領域中突破自我，與大家共同成長。 
                             </div>
                         </div>
                     </div>
@@ -256,9 +263,82 @@
         </div>
         <!-- 作品集 -->
         <div class="index_works indexBox" id="index_works">
-            <!-- carousul -->
-            <!-- https://www.bilibili.com/video/BV1ZxWveLENW/ -->
-
+            <!-- carousel -->
+            <div class="carousel" id="carousel">
+                <div class="list">
+                    <div class="item">
+                        <div class="item_img"><img src="img/works/ex.png" alt=""></div>
+                        <div class="item_text">
+                            <div class="item_title">
+                                <p>2023〔MAR〕03</p>
+                                <h1>PROJECT A</h1>
+                            </div>
+                            <div class="item_ctx">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, provident nobis minima saepe rerum laudantium necessitatibus ut quis totam. Praesentium!</p>
+                                <span>WEBSITE ENGENERRING</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item_img"><img src="img/works/2.png" alt=""></div>
+                        <div class="item_text">
+                            <div class="item_title">
+                                <p>2023〔MAR〕03</p>
+                                <h1>PROJECT B</h1>
+                            </div>
+                            <div class="item_ctx">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, provident nobis minima saepe rerum laudantium necessitatibus ut quis totam. Praesentium!</p>
+                                <span>WEBSITE ENGENERRING</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item_img"><img src="img/works/ex.png" alt=""></div>
+                        <div class="item_text">
+                            <div class="item_title">
+                                <p>2023〔MAR〕03</p>
+                                <h1>PROJECT C</h1>
+                            </div>
+                            <div class="item_ctx">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, provident nobis minima saepe rerum laudantium necessitatibus ut quis totam. Praesentium!</p>
+                                <span>WEBSITE ENGENERRING</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item_img"><img src="img/works/ex.png" alt=""></div>
+                        <div class="item_text">
+                            <div class="item_title">
+                                <p>2023〔MAR〕03</p>
+                                <h1>PROJECT D</h1>
+                            </div>
+                            <div class="item_ctx">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, provident nobis minima saepe rerum laudantium necessitatibus ut quis totam. Praesentium!</p>
+                                <span>WEBSITE ENGENERRING</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="item_img"><img src="img/works/ex.png" alt=""></div>
+                        <div class="item_text">
+                            <div class="item_title">
+                                <p>2023〔MAR〕03</p>
+                                <h1>PROJECT E</h1>
+                            </div>
+                            <div class="item_ctx">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, provident nobis minima saepe rerum laudantium necessitatibus ut quis totam. Praesentium!</p>
+                                <span>WEBSITE ENGENERRING</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="arrows">
+                    <button id="prev">
+                        <span>PREV </span>
+                        ✦</button>
+                    <button id="next">✦<span> NEXT</span></button>
+                </div>
+            </div>
             <button class="see_all_works">
                 SEE ALL WORKS
             </button>
@@ -276,12 +356,6 @@
                     <li>
                         <a href="">
                             <span>PROJECT B</span>
-                            <span>2023[JUN]03</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <span>PROJECT A</span>
                             <span>2023[JUN]03</span>
                         </a>
                     </li>
@@ -342,6 +416,150 @@
                         </div>
                     </div>
                 </div>
+                <div class="work_container">
+                    <div class="exit" id="works_exit">
+                        <img src="img/icon/icon_exit.svg" alt="">
+                    </div>
+                    <div class="work_box">
+                        <div class="work_topper_pic">
+                            <img src="img/works/1.png" alt="">
+                        </div>
+                        <div class="work_context">
+                            <div class="work_text">
+                            <h1>PROJECT B</h1>
+                            <a href=""><button>WEBSITE</button></a>
+                            <div class="work_article">
+                                <p>
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam unde eum architecto doloremque autem est voluptatum sed praesentium rem odit error aliquam culpa labore alias, impedit sequi id incidunt natus tempora quis libero. Veniam inventore recusandae minus quod esse iure, harum consequuntur sed, possimus dignissimos quisquam minima corporis repellat commodi!
+                                </p>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, ut suscipit illum consequuntur animi illo accusamus nemo repellat culpa, possimus officia vero ducimus autem corrupti assumenda excepturi? Rem, nisi? Maxime, nihil! Inventore maiores eius sequi asperiores quae, corporis nisi eveniet necessitatibus a dolores vitae deleniti culpa sunt error enim architecto.
+                                </p>
+                            </div>
+                            </div>
+                            <div class="work_library">
+                                <div class="library_box">
+                                    <img src="img/works/2.png" alt="">
+                                </div>
+                                <div class="library_box">
+                                    <img src="img/works/3.png">
+                                </div>
+                                <span class="work_detail">
+                                    OO有限股份公司設計<br>
+                                    2023[MAR] 03
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="work_container">
+                    <div class="exit" id="works_exit">
+                        <img src="img/icon/icon_exit.svg" alt="">
+                    </div>
+                    <div class="work_box">
+                        <div class="work_topper_pic">
+                            <img src="img/works/1.png" alt="">
+                        </div>
+                        <div class="work_context">
+                            <div class="work_text">
+                            <h1>PROJECT C</h1>
+                            <a href=""><button>WEBSITE</button></a>
+                            <div class="work_article">
+                                <p>
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam unde eum architecto doloremque autem est voluptatum sed praesentium rem odit error aliquam culpa labore alias, impedit sequi id incidunt natus tempora quis libero. Veniam inventore recusandae minus quod esse iure, harum consequuntur sed, possimus dignissimos quisquam minima corporis repellat commodi!
+                                </p>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, ut suscipit illum consequuntur animi illo accusamus nemo repellat culpa, possimus officia vero ducimus autem corrupti assumenda excepturi? Rem, nisi? Maxime, nihil! Inventore maiores eius sequi asperiores quae, corporis nisi eveniet necessitatibus a dolores vitae deleniti culpa sunt error enim architecto.
+                                </p>
+                            </div>
+                            </div>
+                            <div class="work_library">
+                                <div class="library_box">
+                                    <img src="img/works/2.png" alt="">
+                                </div>
+                                <div class="library_box">
+                                    <img src="img/works/3.png">
+                                </div>
+                                <span class="work_detail">
+                                    OO有限股份公司設計<br>
+                                    2023[MAR] 03
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="work_container">
+                    <div class="exit" id="works_exit">
+                        <img src="img/icon/icon_exit.svg" alt="">
+                    </div>
+                    <div class="work_box">
+                        <div class="work_topper_pic">
+                            <img src="img/works/1.png" alt="">
+                        </div>
+                        <div class="work_context">
+                            <div class="work_text">
+                            <h1>PROJECT D</h1>
+                            <a href=""><button>WEBSITE</button></a>
+                            <div class="work_article">
+                                <p>
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam unde eum architecto doloremque autem est voluptatum sed praesentium rem odit error aliquam culpa labore alias, impedit sequi id incidunt natus tempora quis libero. Veniam inventore recusandae minus quod esse iure, harum consequuntur sed, possimus dignissimos quisquam minima corporis repellat commodi!
+                                </p>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, ut suscipit illum consequuntur animi illo accusamus nemo repellat culpa, possimus officia vero ducimus autem corrupti assumenda excepturi? Rem, nisi? Maxime, nihil! Inventore maiores eius sequi asperiores quae, corporis nisi eveniet necessitatibus a dolores vitae deleniti culpa sunt error enim architecto.
+                                </p>
+                            </div>
+                            </div>
+                            <div class="work_library">
+                                <div class="library_box">
+                                    <img src="img/works/2.png" alt="">
+                                </div>
+                                <div class="library_box">
+                                    <img src="img/works/3.png">
+                                </div>
+                                <span class="work_detail">
+                                    OO有限股份公司設計<br>
+                                    2023[MAR] 03
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="work_container">
+                    <div class="exit" id="works_exit">
+                        <img src="img/icon/icon_exit.svg" alt="">
+                    </div>
+                    <div class="work_box">
+                        <div class="work_topper_pic">
+                            <img src="img/works/1.png" alt="">
+                        </div>
+                        <div class="work_context">
+                            <div class="work_text">
+                            <h1>PROJECT E</h1>
+                            <a href=""><button>WEBSITE</button></a>
+                            <div class="work_article">
+                                <p>
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam unde eum architecto doloremque autem est voluptatum sed praesentium rem odit error aliquam culpa labore alias, impedit sequi id incidunt natus tempora quis libero. Veniam inventore recusandae minus quod esse iure, harum consequuntur sed, possimus dignissimos quisquam minima corporis repellat commodi!
+                                </p>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, ut suscipit illum consequuntur animi illo accusamus nemo repellat culpa, possimus officia vero ducimus autem corrupti assumenda excepturi? Rem, nisi? Maxime, nihil! Inventore maiores eius sequi asperiores quae, corporis nisi eveniet necessitatibus a dolores vitae deleniti culpa sunt error enim architecto.
+                                </p>
+                            </div>
+                            </div>
+                            <div class="work_library">
+                                <div class="library_box">
+                                    <img src="img/works/2.png" alt="">
+                                </div>
+                                <div class="library_box">
+                                    <img src="img/works/3.png">
+                                </div>
+                                <span class="work_detail">
+                                    OO有限股份公司設計<br>
+                                    2023[MAR] 03
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
@@ -366,9 +584,11 @@
 
     </footer>
     <!-- javsScrips -->
+    <!-- <script src="js/layout/load.js"></script> -->
     <script src="js/layout/bar.js"></script>
     <script src="js/layout/cursor.js"></script>
     <script src="js/layout/model.js"></script>
+    <script src="js/carousel.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>

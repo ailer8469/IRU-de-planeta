@@ -96,6 +96,7 @@ a{
 button{
         border: none;
         background-color: transparent;
+        cursor: pointer;
     }
 // .cursor {
     //     position: absolute;
@@ -415,9 +416,12 @@ main{
 }
 .index_about{
     @include flex("",center,center);
+    width: 80%;
+    margin: auto;
 }
 .about_textbox{
     @include flex(column,center,stretch);
+    flex: 1;
     text-align: center;
     padding: 20px 10px;
     width: clamp(300px, 34vw, 500px);
@@ -485,6 +489,12 @@ main{
         text-align: justify;
     }
 }
+.about_library{
+    @include flex(column,center,center);
+    flex: 2;
+    height: 70%;
+    background-color: #1E98BA;
+}
 .index_works{
     position: relative;
     flex-direction: column;
@@ -495,6 +505,7 @@ main{
         top: 10%;
     }
 }
+
 .allWords_page{
     display: none;
     position:relative;
@@ -533,6 +544,172 @@ main{
     }
 }
 
+.carousel{
+    opacity: 1; 
+    transform: translateY(0);
+    position: relative;
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+    transition: opacity 1s ease, transform 1s ease;
+    .list{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 1140px;
+        max-width: 90%;
+        height: 80%;
+    }
+    .item{
+        @include flex(column,center,center);
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $item_bg;
+        box-shadow: $boxShadow;
+        padding: 20px;
+        width: clamp(300px, 34vw, 500px);
+        height:100%;
+        transition: transform 0.5s ease;
+    }
+    .item.active{
+        transition: transform .5s ease;
+        &:hover,
+        &:active {
+            transform: translateY(-10px);
+        }
+    }
+    .item:nth-child(n+4){
+        opacity: 0;
+        pointer-events: 0;
+    }
+    .item:nth-child(2){
+        transform: $item2-transform;
+        filter: $item2-blur;
+        z-index: $item2-zindex;
+        opacity: $item2-opacity;
+    }
+    .item:nth-child(1){
+        transform: $item1-transform;
+        filter: $item1-blur;
+        z-index: $item1-zindex;
+        opacity: $item1-opacity;
+        pointer-events: none;
+    }
+    .item:nth-child(3){
+        transform: $item3-transform;
+        filter: $item3-blur;
+        z-index: $item3-zindex;
+        opacity: $item3-opacity;
+    }
+    .item:nth-child(4){
+        transform: $item4-transform;
+        filter: $item4-blur;
+        z-index: $item4-zindex;
+        opacity: $item4-opacity;
+    }
+    .item:nth-child(1){
+        animation: positionItem2 0.5s ease-in-out 1 forwards;
+    }
+    .item:nth-child(2){
+        animation: positionItem3 0.7s ease-in-out 1 forwards;
+    }
+    .item:nth-child(3){
+        animation: positionItem4 0.9s ease-in-out 1 forwards;
+    }
+    .arrows{
+        @include flex("",center,center);
+        position:absolute;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%,0);
+        button{
+            @include flex("",center,center);
+            font-size: 2rem;
+            color: $nav_time;
+            span{
+                margin-top: 5px;
+                font-size: .7rem;
+            }
+        }
+    }
+    .item_img{
+        flex: 1;
+        width: 100%;
+        height: 100%;
+    }
+    .item_text{
+        @include flex("",space-between,flex-start);
+        position: relative;
+        flex: 2;
+        .item_title{
+            position: relative;
+            bottom: -60%;
+            flex: 1;
+            color: $nav_time;
+            text-wrap: nowrap;
+            p{
+                font-family: "IBM Plex Sans", sans-serif;
+                font-size: .6vw;
+            }
+            h1{
+                font-size: 4vw;
+            }
+        }
+        .item_ctx{
+            flex: 1;
+            height: 100%;
+            position: relative;
+            padding: 0 20px;
+            p{
+                margin: 20px;
+                font-family: "IBM Plex Sans", sans-serif;
+                font-size: 1em;
+            }
+            span{
+                font-size: 1em;
+                border: 1px solid $word;
+                padding: 5px 15px;
+                border-radius: 30px;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                text-wrap: nowrap;
+            }
+        }
+    }
+}
+.carousel.hidden{ 
+    pointer-events: none;
+    opacity: 0; 
+    transform: translateY(30px); 
+    transition: opacity 1s ease, transform 1s ease;
+}
+@keyframes positionItem2{
+    from{
+        transform: $item2-transform;
+        filter: $item2-blur;
+        z-index: $item2-zindex;
+        opacity: $item2-opacity; 
+    }   
+}
+@keyframes positionItem3{
+    from{
+        transform: $item3-transform;
+        filter: $item3-blur;
+        z-index: $item3-zindex;
+        opacity: $item3-opacity; 
+    }   
+}
+@keyframes positionItem4{
+    from{
+        transform: $item4-transform;
+        filter: $item4-blur;
+        z-index: $item4-zindex;
+        opacity: $item4-opacity; 
+    }   
+}
 footer{
     @include flex("",space-between,center);
     width: 100%;
