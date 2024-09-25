@@ -1072,13 +1072,13 @@ main {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
-  width: calc(100% - 60px);
-  height: 80%;
+  width: 89%;
   padding-bottom: 56.25%;
   background-image: url("../img/index/top_pic.svg");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
+  overflow: hidden;
 }
 
 .top_pic .index_top_title {
@@ -1154,9 +1154,6 @@ main {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   text-align: center;
   padding: 20px 10px;
   width: clamp(300px, 34vw, 500px);
@@ -1252,27 +1249,6 @@ main {
   letter-spacing: 1.4px;
   padding: 0 20px;
   text-align: justify;
-}
-
-.about_library {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
-  height: 70%;
-  background-color: #1E98BA;
 }
 
 .index_works {

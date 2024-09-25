@@ -4,20 +4,15 @@ $(document).ready(function() {
     let carousel = $('#carousel');
     let list = $('.list');
     let items = $('.item');
-    let itemActive =$('.item.active');
     let workContainers = $('.work_container');
     let workModel = $('.index_work_model');
 
+    let currentIndex = 1; // 目前的 active 索引（初始為第二個項目）
     const updateActive = () => {
-        let newActive = list.children().eq(1); 
-        newActive.addClass('active'); 
-
-        list.children().each(function(index) {
-            if (index !== 1) {
-                $(this).removeClass('active');
-            }
-        });
+        items.removeClass('active'); // 移除所有 active 類
+        items.eq(currentIndex).addClass('active'); // 將當前項目設為 active
     };
+    // 初始化
     updateActive();
 
     next.on('click', function() {
@@ -28,11 +23,13 @@ $(document).ready(function() {
     });
     const showSlider = (type) => {
         if (type === "next") {
-            list.append(items.first());
-            carousel.addClass('next');
+            currentIndex = (currentIndex + 1) % items.length; // 更新索引
+            const firstItem = list.children().first(); // 獲取第一個項目
+            list.append(firstItem); // 將其移到列表最後
         } else {
-            list.prepend(items.last());
-            carousel.addClass('prev')
+            currentIndex = (currentIndex - 1 + items.length) % items.length; // 更新索引
+            const lastItem = list.children().last(); // 獲取最後一個項目
+            list.prepend(lastItem); // 將其移到列表最前面
         }
         updateActive();
     };

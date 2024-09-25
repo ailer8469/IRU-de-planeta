@@ -382,13 +382,13 @@ main{
 .top_pic{
     @include flex("",center,center);
     position: relative;
-    width: calc(100% - 60px);
-    height: 80%;
+    width: 89%;
     padding-bottom: 56.25%;
     background-image: url('../img/index/top_pic.svg');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
+    overflow: hidden; 
     .index_top_title{
         @include flex(column,center,center);
         position: absolute;
@@ -421,7 +421,6 @@ main{
 }
 .about_textbox{
     @include flex(column,center,stretch);
-    flex: 1;
     text-align: center;
     padding: 20px 10px;
     width: clamp(300px, 34vw, 500px);
@@ -490,10 +489,6 @@ main{
     }
 }
 .about_library{
-    @include flex(column,center,center);
-    flex: 2;
-    height: 70%;
-    background-color: #1E98BA;
 }
 .index_works{
     position: relative;
