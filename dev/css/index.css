@@ -832,6 +832,11 @@ button {
   background-image: url("../img/loading/5.svg");
 }
 
+#progress {
+  font-size: 10rem;
+  color: #5C5C5C;
+}
+
 nav {
   position: fixed;
   color: #2c4772;

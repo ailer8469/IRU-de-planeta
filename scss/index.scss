@@ -165,6 +165,10 @@ button{
         }
     }
 }
+#progress{
+    font-size: 10rem;
+    color: $loading_word;
+}
 nav{
     position: fixed;
     color: $nav_time;
