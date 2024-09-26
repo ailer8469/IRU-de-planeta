@@ -140,8 +140,8 @@ body {
           box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
   -webkit-transform: translateY(10%) translateX(0%);
           transform: translateY(10%) translateX(0%);
-  -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -webkit-transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   opacity: 0;
 }
 

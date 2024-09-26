@@ -26,6 +26,7 @@
 </head> 
 <body>
     <script>
+        AOS.init();
         var wdth = $(window).width();
         if (document.querySelector('.scroll-trigger-element')) {
             var script = document.createElement('script');
@@ -91,12 +92,15 @@
     
     </script>
         <!--▼ loading ▼-->
-        <!-- <div id="loading">
+        <div id="loading">
             <!--背景文字 -->
-            <!-- <div class="bg_words title_style">
+            <div class="bg_words title_style">
                 IRU’s PLANETA
             </div>
             <div class="loadpage" id="loadpage">
+                <p id="progress">
+                    0％
+                </p>
                 <div class="load load1"></div> 
                 <div class="load load2"></div> 
                 <div class="load load3"></div> 
@@ -105,8 +109,8 @@
             </div>
             <div class="footer_logo">
                 IRU’S PLANETA
-            </div> -->
-        <!-- </div>--> 
+            </div>
+        </div> 
     <!--▲ loading ▲-->
     <header>
         <!-- https://codepen.io/jscottsmith/pen/VjPaLO -->
@@ -207,7 +211,9 @@
         <!-- 關於我 -->
         <div class="index_about indexBox" id="index_about">
             <!-- 左邊文字區 -->
-            <div id="openAboutme" class="about_textbox">
+            <div 
+            data-aos="fade-up"  
+            data-aos-duration="3000" id="openAboutme" class="about_textbox">
                 <hr>
                 <h1 class="text_title">ABOUT ME</h1>
                 <hr>
@@ -302,14 +308,20 @@
             <button class="see_all_works">
                 SEE ALL WORKS
             </button>
-            <div class="arrows lab">
+            <div class="arrows lab"
+            data-aos="fade-up"  
+            data-aos-duration="3000">
                 <button class="prev">
                     <span>PREV </span>
                     ✦</button>
                 <button class="next">✦<span> NEXT</span></button>
             </div>
             <!-- carousel -->
-            <div class="carousel" id="carousel">
+            <div 
+            data-aos="fade-up"  
+            data-aos-duration="3000"
+            data-aos-delay="300"
+            class="carousel" id="carousel">
                 <div class="list">
                     <div class="item">
                         <div class="item_img"><img src="img/works/ex.png" alt=""></div>
@@ -377,7 +389,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="arrows pc">
+                <div class="arrows pc"
+                data-aos="fade-up"  
+                data-aos-duration="3000">
                     <button class="prev">
                         <span>PREV </span>
                         ✦</button>
@@ -636,7 +650,7 @@
 
     </footer>
     <!-- javsScrips -->
-    <!-- <script src="js/layout/load.js"></script> -->
+    <script src="js/layout/load.js"></script>
     <script src="js/layout/bar.js"></script>
     <script src="js/layout/cursor.js"></script>
     <script src="js/layout/model.js"></script>
