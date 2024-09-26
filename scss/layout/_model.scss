@@ -302,15 +302,7 @@
 @media (max-width: $medio) {
     .grid-container > div:nth-child(1),.grid-container > div:nth-child(2),.grid-container > div:nth-child(3){
         font-size: 1em;
-    }
-    .grid-container > div:nth-child(1){
-        grid-column: span 5;
-    }
-    .grid-container > div:nth-child(2){
-        grid-column: span 5;
-    }
-    .grid-container > div:nth-child(3){
-        grid-column: span 5;
+        grid-column: span 15;
     }
     .grid-container > div:nth-child(4){
         padding: 20px 0;
@@ -318,7 +310,7 @@
     .grid-container > div:nth-child(10),.grid-container > div:nth-child(11),.grid-container > div:nth-child(12){
         grid-column: span 15;
     }
-    .grid-container > div:nth-child(10),.grid-container > div:nth-child(11){
+    .grid-container > div:nth-child(10),.grid-container > div:nth-child(11),.grid-container > div:nth-child(1),.grid-container > div:nth-child(2){
         border-right: 0;
     }
     .index_about .about_textbox .text_title {
@@ -333,6 +325,9 @@
     .about_box {
         margin: 50px 0px;
     }
+    .work_context .work_article {
+        font-size: 4.5vw;
+    }
 }
 @media (max-width:$mobile) {
     .exit{
@@ -340,5 +335,17 @@
     }
     .about_container, .work_container{
         width: 90%;
+    }
+    .work_box .work_topper_pic {
+        height: 250px;
+    }
+    .work_context .work_text h1 {
+        font-size: 5rem;
+    }
+    .work_box {
+        padding: 30px 0;
+    }
+    .work_context .work_text button {
+        font-size: 2em;
     }
 }
