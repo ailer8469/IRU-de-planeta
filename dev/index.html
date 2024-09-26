@@ -26,15 +26,40 @@
 </head> 
 <body>
     <script>
+        var wdth = $(window).width();
         if (document.querySelector('.scroll-trigger-element')) {
             var script = document.createElement('script');
             script.src = "https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js";
             document.head.appendChild(script);
         }
+        
+        
         $(document).ready(function() {
-            $(".top_pic").ripples({
-                resolution: 300,
-                perturbance: 0.01
+            function truncateText() {
+                $('.item_ctx p').each(function() {
+                    const fullText = $(this).text();
+                    const words = fullText.split(' ');
+
+                    if ($(window).width() < 1200 && words.length > 10) {
+                        const truncatedText = words.slice(0, 10).join(' ') + '...';
+                        $(this).text(truncatedText);
+                    } else if ($(window).width() >= 1200) {
+                        $(this).text(fullText); // 恢復完整內容
+                    }
+                });
+            }
+            // 初始檢查
+            truncateText();
+
+            // 監聽視窗大小變化
+            let resizeTimeout;
+            $(window).resize(function() {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(function() {
+                    truncateText();
+                    // 在這裡重整頁面
+                    window.location.reload();
+                }, 300); // 300ms延遲，可根據需要調整
             });
 
             const currentYear = new Date().getFullYear();
@@ -171,9 +196,9 @@
             <div class="top_pic">
                 <div class="index_top_title">
                     <div class="title_style">
-                        <span>*</span>
-                        IRU’s PLANETA
-                        <span>*</span>
+                        <img src="img/dot.svg" alt="" class="dots">
+                        <h1>IRU’s PLANETA</h1>
+                        <img src="img/dot.svg" alt="" class="dots">
                     </div>
                     <h2>FRONT-END DEVELOPER</h2>
                 </div>
@@ -210,11 +235,11 @@
                         <div class="grid-container">
                             <!-- 第一行 -->
                             <div class="col-1">
-                                <span>⟡⟡⟡⟡⟡</span>
+                                <span class="pc">⟡⟡⟡⟡⟡</span>
                                 <span>TAIWANESE</span></div>
                             <div class="col-2">IRU 魏嘉妘</div>
                             <div class="col-3">
-                                <span>6月9日  雙子座</span><span>⟡⟡⟡⟡⟡</span>
+                                <span>6月9日  雙子座</span><span class="pc">⟡⟡⟡⟡⟡</span>
                                 </div>             
                             <!-- 第二行 -->
                             <div class="col-4">
@@ -248,7 +273,7 @@
                     
                             <!-- 第四行 -->
                             <div class="col-9">
-                                <h4>Let’s make some waves.</h4></div>
+                                <h4>LET’S MAKE SOME WAVES.</h4></div>
                     
                             <!-- 第五行 -->
                             <div class="col-10 myword">
@@ -270,6 +295,16 @@
         </div>
         <!-- 作品集 -->
         <div class="index_works indexBox" id="index_works">
+            <h2 class="lab">WORK PORTFOLIO</h2>
+            <button class="see_all_works">
+                SEE ALL WORKS
+            </button>
+            <div class="arrows lab">
+                <button class="prev">
+                    <span>PREV </span>
+                    ✦</button>
+                <button class="next">✦<span> NEXT</span></button>
+            </div>
             <!-- carousel -->
             <div class="carousel" id="carousel">
                 <div class="list">
@@ -339,16 +374,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="arrows">
-                    <button id="prev">
+                <div class="arrows pc">
+                    <button class="prev">
                         <span>PREV </span>
                         ✦</button>
-                    <button id="next">✦<span> NEXT</span></button>
+                    <button class="next">✦<span> NEXT</span></button>
                 </div>
             </div>
-            <button class="see_all_works">
-                SEE ALL WORKS
-            </button>
             <div class="allWords_page">
                 <div class="exit" id="project_exit">
                     <img src="img/icon/icon_exit.svg" alt="">
@@ -397,8 +429,10 @@
                         </div>
                         <div class="work_context">
                             <div class="work_text">
-                            <h1>PROJECT A</h1>
-                            <a href=""><button>WEBSITE</button></a>
+                                <div class="work_text_title">
+                                    <h1>PROJECT A</h1>
+                                    <a href=""><button>WEBSITE</button></a>
+                                </div>
                             <div class="work_article">
                                 <p>
                                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam unde eum architecto doloremque autem est voluptatum sed praesentium rem odit error aliquam culpa labore alias, impedit sequi id incidunt natus tempora quis libero. Veniam inventore recusandae minus quod esse iure, harum consequuntur sed, possimus dignissimos quisquam minima corporis repellat commodi!
@@ -433,8 +467,48 @@
                         </div>
                         <div class="work_context">
                             <div class="work_text">
-                            <h1>PROJECT B</h1>
-                            <a href=""><button>WEBSITE</button></a>
+                                <div class="work_text_title">
+                                    <h1>PROJECT A</h1>
+                                    <a href=""><button>WEBSITE</button></a>
+                                </div>
+                            <div class="work_article">
+                                <p>
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam unde eum architecto doloremque autem est voluptatum sed praesentium rem odit error aliquam culpa labore alias, impedit sequi id incidunt natus tempora quis libero. Veniam inventore recusandae minus quod esse iure, harum consequuntur sed, possimus dignissimos quisquam minima corporis repellat commodi!
+                                </p>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, ut suscipit illum consequuntur animi illo accusamus nemo repellat culpa, possimus officia vero ducimus autem corrupti assumenda excepturi? Rem, nisi? Maxime, nihil! Inventore maiores eius sequi asperiores quae, corporis nisi eveniet necessitatibus a dolores vitae deleniti culpa sunt error enim architecto.
+                                </p>
+                            </div>
+                            </div>
+                            <div class="work_library">
+                                <div class="library_box">
+                                    <img src="img/works/2.png" alt="">
+                                </div>
+                                <div class="library_box">
+                                    <img src="img/works/3.png">
+                                </div>
+                                <span class="work_detail">
+                                    OO有限股份公司設計<br>
+                                    2023[MAR] 03
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                <div class="work_container">
+                    <div class="exit" id="works_exit">
+                        <img src="img/icon/icon_exit.svg" alt="">
+                    </div>
+                    <div class="work_box">
+                        <div class="work_topper_pic">
+                            <img src="img/works/1.png" alt="">
+                        </div>
+                        <div class="work_context">
+                            <div class="work_text">
+                                <div class="work_text_title">
+                                    <h1>PROJECT A</h1>
+                                    <a href=""><button>WEBSITE</button></a>
+                                </div>
                             <div class="work_article">
                                 <p>
                                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam unde eum architecto doloremque autem est voluptatum sed praesentium rem odit error aliquam culpa labore alias, impedit sequi id incidunt natus tempora quis libero. Veniam inventore recusandae minus quod esse iure, harum consequuntur sed, possimus dignissimos quisquam minima corporis repellat commodi!
@@ -469,8 +543,10 @@
                         </div>
                         <div class="work_context">
                             <div class="work_text">
-                            <h1>PROJECT C</h1>
-                            <a href=""><button>WEBSITE</button></a>
+                                <div class="work_text_title">
+                                    <h1>PROJECT A</h1>
+                                    <a href=""><button>WEBSITE</button></a>
+                                </div>
                             <div class="work_article">
                                 <p>
                                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam unde eum architecto doloremque autem est voluptatum sed praesentium rem odit error aliquam culpa labore alias, impedit sequi id incidunt natus tempora quis libero. Veniam inventore recusandae minus quod esse iure, harum consequuntur sed, possimus dignissimos quisquam minima corporis repellat commodi!
@@ -494,7 +570,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>                
                 <div class="work_container">
                     <div class="exit" id="works_exit">
                         <img src="img/icon/icon_exit.svg" alt="">
@@ -505,8 +581,10 @@
                         </div>
                         <div class="work_context">
                             <div class="work_text">
-                            <h1>PROJECT D</h1>
-                            <a href=""><button>WEBSITE</button></a>
+                                <div class="work_text_title">
+                                    <h1>PROJECT A</h1>
+                                    <a href=""><button>WEBSITE</button></a>
+                                </div>
                             <div class="work_article">
                                 <p>
                                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam unde eum architecto doloremque autem est voluptatum sed praesentium rem odit error aliquam culpa labore alias, impedit sequi id incidunt natus tempora quis libero. Veniam inventore recusandae minus quod esse iure, harum consequuntur sed, possimus dignissimos quisquam minima corporis repellat commodi!
@@ -530,43 +608,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="work_container">
-                    <div class="exit" id="works_exit">
-                        <img src="img/icon/icon_exit.svg" alt="">
-                    </div>
-                    <div class="work_box">
-                        <div class="work_topper_pic">
-                            <img src="img/works/1.png" alt="">
-                        </div>
-                        <div class="work_context">
-                            <div class="work_text">
-                            <h1>PROJECT E</h1>
-                            <a href=""><button>WEBSITE</button></a>
-                            <div class="work_article">
-                                <p>
-                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam unde eum architecto doloremque autem est voluptatum sed praesentium rem odit error aliquam culpa labore alias, impedit sequi id incidunt natus tempora quis libero. Veniam inventore recusandae minus quod esse iure, harum consequuntur sed, possimus dignissimos quisquam minima corporis repellat commodi!
-                                </p>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, ut suscipit illum consequuntur animi illo accusamus nemo repellat culpa, possimus officia vero ducimus autem corrupti assumenda excepturi? Rem, nisi? Maxime, nihil! Inventore maiores eius sequi asperiores quae, corporis nisi eveniet necessitatibus a dolores vitae deleniti culpa sunt error enim architecto.
-                                </p>
-                            </div>
-                            </div>
-                            <div class="work_library">
-                                <div class="library_box">
-                                    <img src="img/works/2.png" alt="">
-                                </div>
-                                <div class="library_box">
-                                    <img src="img/works/3.png">
-                                </div>
-                                <span class="work_detail">
-                                    OO有限股份公司設計<br>
-                                    2023[MAR] 03
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </div>                
             </div>
         </div>
     </main>

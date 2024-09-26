@@ -192,19 +192,21 @@
     }
 }
  /* 第一行 */
+.grid-container > div:nth-child(1),.grid-container > div:nth-child(2),.grid-container > div:nth-child(3){
+    font-size: 1.3em;
+    font-weight: 500;
+    text-wrap: nowrap;
+}
 .grid-container > div:nth-child(1) {
     @include flex("",space-evenly,center);
     grid-column: span 6;
-    font-size: 1.3em;
 }
 .grid-container > div:nth-child(2) {
     grid-column: span 3;
-    font-size: 1.3em;
 }
 .grid-container > div:nth-child(3) {
     @include flex("",space-evenly,center);
     grid-column: span 6;
-    font-size: 1.3em;
 }
 /* 第二行 */
 .grid-container > div:nth-child(4) {
@@ -257,4 +259,86 @@
 }
 .grid-container > div:nth-child(3),.grid-container > div:nth-child(5),.grid-container > div:nth-child(8),.grid-container > div:nth-child(9),.grid-container > div:nth-child(12) {
     border-right: none;
+}
+
+@media (max-width:$desktop) {
+    .grid-container > div:nth-child(4) {
+        grid-column: span 15;
+        border-right: none;
+    }
+    .grid-container > div:nth-child(5) {
+        grid-column: span 15;
+    }
+    .grid-container > div:nth-child(6) {
+        grid-column: span 10;
+    }
+    .grid-container > div:nth-child(7) {
+        grid-column: span 5;
+        border-right: none;
+    }
+    .grid-container > div:nth-child(8) {
+        grid-column: span 15;
+    }
+    .about_box h4 {
+        font-size: 3em;
+    }
+    .work_context {
+        flex-direction: column;
+    }
+    .work_text_title{
+        @include flex("",flex-start,center);
+    }
+    .work_context .work_text h1 {
+        font-size: 8rem;
+        margin-right: 30px;
+    }
+    .work_context .work_article{
+        max-width: none;
+    }
+    .work_context .work_library .library_box{
+        width: 100%;
+    }
+}
+@media (max-width: $medio) {
+    .grid-container > div:nth-child(1),.grid-container > div:nth-child(2),.grid-container > div:nth-child(3){
+        font-size: 1em;
+    }
+    .grid-container > div:nth-child(1){
+        grid-column: span 5;
+    }
+    .grid-container > div:nth-child(2){
+        grid-column: span 5;
+    }
+    .grid-container > div:nth-child(3){
+        grid-column: span 5;
+    }
+    .grid-container > div:nth-child(4){
+        padding: 20px 0;
+    }
+    .grid-container > div:nth-child(10),.grid-container > div:nth-child(11),.grid-container > div:nth-child(12){
+        grid-column: span 15;
+    }
+    .grid-container > div:nth-child(10),.grid-container > div:nth-child(11){
+        border-right: 0;
+    }
+    .index_about .about_textbox .text_title {
+        font-size: 13vw;
+    }
+    .index_about .about_textbox .text_jobname{
+        font-size: 1.8vw;
+    }
+    .about_box h4{
+        line-height: 1.5;
+    }
+    .about_box {
+        margin: 50px 0px;
+    }
+}
+@media (max-width:$mobile) {
+    .exit{
+        width: 30px;
+    }
+    .about_container, .work_container{
+        width: 90%;
+    }
 }

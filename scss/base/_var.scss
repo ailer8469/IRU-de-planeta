@@ -4,6 +4,8 @@ $smTitle:1vw;
 $text:1.5vw;
 $h3:18px;
 
+$bgTitle_lab:9vw;
+$bgTitle_sp:5vw;
 // cursor
 $click:url("../pic/icon/click_cursor.svg"), default;
 $regular:url("../pic/icon/regular_cursor.svg"), default;
@@ -42,9 +44,11 @@ $item4-opacity:1;
 
 $index: calc(1vw + 1vh);
 $transition: cubic-bezier(.1, .7, 0, 1);
+$cursor-height:80px;
 
 // 斷點 breakpoint
 $desktop: 1200px;
-$mobile : 320px;
+$medio: 800px;
+$mobile : 550px;
 
 

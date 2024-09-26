@@ -33,9 +33,9 @@ var wdth=$(window).width();
 $(window).resize(function(){
     wdth=$(window).width();
 });
-    window.addEventListener("mousedown", mouseHandler);
-    window.addEventListener("mouseup", mouseHandler);
-    window.addEventListener("mousemove", mouseMove);
+window.addEventListener("mousedown", mouseHandler);
+window.addEventListener("mouseup", mouseHandler);
+window.addEventListener("mousemove", mouseMove);
 
 
 

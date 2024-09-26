@@ -1,0 +1,21 @@
+<svg width="1440" height="1024" viewBox="0 0 1440 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle opacity="0.75" cx="719.5" cy="287.5" r="381.314" stroke="#362413"/>
+<circle opacity="0.75" cx="719.5" cy="287.5" r="308.778" stroke="#362413"/>
+<circle opacity="0.75" cx="719.501" cy="287.5" r="236.242" stroke="#362413"/>
+<circle opacity="0.75" cx="719.5" cy="287.5" r="154.639" stroke="#362413"/>
+<circle opacity="0.75" cx="719.5" cy="287.5" r="880" stroke="#362413"/>
+<circle opacity="0.75" cx="719.501" cy="287.5" r="716.794" stroke="#362413"/>
+<circle opacity="0.75" cx="719.5" cy="287.5" r="544.521" stroke="#362413"/>
+<circle opacity="0.75" cx="719.5" cy="287.5" r="462.918" stroke="#362413"/>
+<g opacity="0.95" filter="url(#filter0_f_148_982)">
+<ellipse cx="720" cy="314" rx="683" ry="326" fill="#F8F2EB"/>
+<path d="M1402.5 314C1402.5 403.719 1326.29 485.092 1202.74 544.066C1079.22 603.021 908.548 639.5 720 639.5C531.452 639.5 360.779 603.021 237.261 544.066C113.707 485.092 37.5 403.719 37.5 314C37.5 224.281 113.707 142.908 237.261 83.9344C360.779 24.9787 531.452 -11.5 720 -11.5C908.548 -11.5 1079.22 24.9787 1202.74 83.9344C1326.29 142.908 1402.5 224.281 1402.5 314Z" stroke="#362413"/>
+</g>
+<defs>
+<filter id="filter0_f_148_982" x="-63" y="-112" width="1566" height="852" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_148_982"/>
+</filter>
+</defs>
+</svg>
