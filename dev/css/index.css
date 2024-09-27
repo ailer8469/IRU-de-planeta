@@ -1177,8 +1177,8 @@ main {
 }
 
 .bg_words {
-  position: absolute;
-  top: 15%;
+  position: fixed;
+  top: 30%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
@@ -1215,6 +1215,10 @@ main {
   background-size: contain;
   background-position: center bottom;
   overflow: hidden;
+  -webkit-transition: -webkit-transform 2s ease-out;
+  transition: -webkit-transform 2s ease-out;
+  transition: transform 2s ease-out;
+  transition: transform 2s ease-out, -webkit-transform 2s ease-out;
 }
 
 .top_pic .index_top_title {
@@ -1263,6 +1267,11 @@ main {
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 1vw;
   letter-spacing: .5vw;
+}
+
+.zap {
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .index_about {

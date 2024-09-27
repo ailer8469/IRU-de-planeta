@@ -360,8 +360,8 @@ main{
     width: 100%;
 }
 .bg_words{
-    position: absolute;
-    top: 15%;
+    position: fixed;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
@@ -384,6 +384,7 @@ main{
     background-size: contain;
     background-position: center bottom;
     overflow: hidden; 
+    transition: transform 2s ease-out;
     .index_top_title{
         @include flex(column,center,center);
         position: absolute;
@@ -404,6 +405,9 @@ main{
             letter-spacing: .5vw;
        }
     }
+}
+.zap{
+    transform: translateY(-50%);
 }
 .index_about{
     @include flex("",center,center);
