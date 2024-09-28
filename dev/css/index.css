@@ -993,6 +993,8 @@ nav .nav_model {
   z-index: 80;
   overflow: hidden;
   display: none;
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
 }
 
 nav .nav_model::before {
@@ -1921,6 +1923,10 @@ footer .footer_contact a:nth-child(1) {
   .index_works h2 {
     margin: 30px 0;
     font-size: 9vw;
+    -webkit-transition: -webkit-transform 2s ease-out;
+    transition: -webkit-transform 2s ease-out;
+    transition: transform 2s ease-out;
+    transition: transform 2s ease-out, -webkit-transform 2s ease-out;
   }
   .index_works .see_all_works {
     position: initial;

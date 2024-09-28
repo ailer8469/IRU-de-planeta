@@ -1,5 +1,5 @@
 // function
-@import 'base/_reset';
+@import 'base/reset';
 @import 'base/var';
 @import 'base/fonts'; 
 @import 'mixins/mix';
@@ -252,6 +252,7 @@ nav{
         z-index: 80;
         overflow: hidden;
         display: none;
+        transform-origin: top center;
         &::before{
             content: '';
             position: absolute;
@@ -774,6 +775,7 @@ footer{
         h2{
             margin: 30px 0;
             font-size: $bgTitle_lab;
+            transition: transform 2s ease-out;
         }
         .see_all_works {
             position: initial;
