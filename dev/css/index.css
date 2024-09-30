@@ -302,13 +302,33 @@ body {
   font-family: "IBM Plex Sans", sans-serif;
   letter-spacing: 3%;
   line-height: 1.3;
-  font-size: 1.5vw;
+  font-size: 1.3vw;
   max-width: 400px;
   width: 100%;
 }
 
 .work_context .work_article p {
   margin: 20px 0;
+}
+
+.work_context .work_article p a {
+  display: inline-block;
+  border-radius: 20px;
+  border: 1px solid #4F709C;
+  padding: 5px 15px;
+  margin: 5px;
+  -webkit-transition: all .7s ease-in-out;
+  transition: all .7s ease-in-out;
+}
+
+.work_context .work_article p a:active, .work_context .work_article p a:hover {
+  background-color: #0C5ECC;
+  color: #ece9dc;
+}
+
+.work_context .work_article h3 {
+  margin-top: 5vh;
+  font-weight: bold;
 }
 
 .work_context .work_library {
@@ -1312,7 +1332,7 @@ main {
   padding: 20px 10px;
   width: clamp(300px, 34vw, 500px);
   height: clamp(300px, 34vw, 500px);
-  font-size: 1.5vw;
+  font-size: 1.3vw;
   cursor: pointer;
   -webkit-transition: all 1s ease, color 1s ease;
   transition: all 1s ease, color 1s ease;
@@ -1458,6 +1478,19 @@ main {
 }
 
 .allWords_page ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: "";
+          flex-direction: "";
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-top: 1px solid #4F709C;
   padding: 20px 10px;
   -webkit-transition: all .7s ease;
@@ -1481,23 +1514,6 @@ main {
 .allWords_page ul span {
   -webkit-transition: all .7s ease;
   transition: all .7s ease;
-}
-
-.allWords_page ul a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: "";
-          flex-direction: "";
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-decoration: none;
 }
 
 .carousel {
@@ -1683,6 +1699,7 @@ main {
   margin: 20px 0 0 20px;
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 1em;
+  line-height: 1.2;
 }
 
 .carousel .item_text .item_ctx span {

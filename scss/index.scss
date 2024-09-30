@@ -509,6 +509,7 @@ main{
         margin: 5vw auto;
         font-size: 5vw;
         li{
+            @include flex("",space-between,center);
             border-top: 1px solid $word;
             padding: 20px 10px;
             transition: all .7s ease;
@@ -525,10 +526,6 @@ main{
         }
         span{
             transition: all .7s ease;
-        }
-        a{
-            @include flex("",space-between,center);
-            text-decoration: none
         }
     }
 }
@@ -638,6 +635,7 @@ main{
                 margin: 20px 0 0 20px;
                 font-family: "IBM Plex Sans", sans-serif;
                 font-size: 1em;
+                line-height: 1.2;
             }
             span{
                 font-size: 1em;

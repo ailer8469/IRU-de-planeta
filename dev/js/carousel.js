@@ -5,6 +5,7 @@ $(document).ready(function() {
     let items = $('.item');
     let workContainers = $('.work_container');
     let workModel = $('.index_work_model');
+    let lis =$('#tag_li li');
 
     let currentIndex = 1; // 目前的 active 索引（初始為第一個項目）
     const updateActive = () => {
@@ -53,6 +54,27 @@ $(document).ready(function() {
         workModel.fadeOut(500);
         $('body').css('overflow', ''); 
     });
+    $(window).on('click', function(event) {
+        if ($(event.target).is(workModel)) {
+            workModel.fadeOut(500);
+            $('body').css('overflow', ''); 
+        }
+    });
+
+
+    lis.on('click', function() {
+        const index = lis.index(this);
+        $('body').css('overflow', 'hidden'); 
+        workModel.fadeIn(500);
+        workContainers.hide(); // 隱藏所有 work_container
+        workContainers.eq(index).show(); // 顯示對應的 work_container
+    });
+
+    $('.exit').on('click', function() {
+        workModel.fadeOut(500);
+        $('body').css('overflow', ''); 
+    });
+
     $(window).on('click', function(event) {
         if ($(event.target).is(workModel)) {
             workModel.fadeOut(500);

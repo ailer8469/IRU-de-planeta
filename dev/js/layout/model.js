@@ -30,7 +30,6 @@ $(document).ready(function() {
             $('.allWords_page').fadeIn();
         },1000);
     });
-    
     $('#project_exit').on('click', function() {
         $('.allWords_page').fadeOut(1000, function() {
             $('.see_all_works').fadeIn(1000);

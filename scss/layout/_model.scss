@@ -142,6 +142,22 @@
         width: 100%;
         p{
             margin: 20px 0;
+            a{
+                display: inline-block;
+                border-radius: 20px;
+                border: 1px solid $word;
+                padding: 5px 15px;
+                margin: 5px;
+                transition: all .7s ease-in-out;
+                &:active,&:hover{
+                    background-color: $word_hover;
+                    color: $body_bg;
+                }
+            }
+        }
+        h3{
+            margin-top: 5vh;
+            font-weight: bold;
         }
     }
     .work_library{
