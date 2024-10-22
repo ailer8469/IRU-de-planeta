@@ -56,10 +56,19 @@
                 clearTimeout(resizeTimeout);
                 resizeTimeout = setTimeout(function() {
                     truncateText();
-                    // 在這裡重整頁面
-                    window.location.reload();
-                }, 300); // 300ms延遲，可根據需要調整
+
+                    // 判斷是否為手機或平板
+                    if (!isMobileOrTablet()) {
+                        // 只有在不是手機或平板時才重整頁面
+                        window.location.reload();
+                    }
+                }, 300); // 300ms延遲
             });
+
+            // 判斷是否為手機或平板的函數
+            function isMobileOrTablet() {
+                return /Mobi|Android/i.test(navigator.userAgent);
+            }
 
             const currentYear = new Date().getFullYear();
             $('#currentYear').text(currentYear);

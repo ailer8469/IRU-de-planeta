@@ -3,6 +3,7 @@ $(document).ready(function() {
     let prev = $('.prev');
     let list = $('.list');
     let items = $('.item');
+    let carousel = $('.carousel');
     let workContainers = $('.work_container');
     let workModel = $('.index_work_model');
     let lis =$('#tag_li li');
@@ -24,11 +25,14 @@ $(document).ready(function() {
     });
     
     const showSlider = (type) => {
+        carousel.removeClass('next', 'prev');
         if (type === "next") {
+            carousel.addClass('next');
             currentIndex = (currentIndex + 1) % items.length; // 更新索引，循環到第一個項目
             const firstItem = list.children().first(); // 獲取第一個項目
             list.append(firstItem); // 將其移到列表最後
         } else {
+            carousel.addClass('prev');
             currentIndex = (currentIndex - 1 + items.length) % items.length; // 更新索引，循環到最後一個項目
             const lastItem = list.children().last(); // 獲取最後一個項目
             list.prepend(lastItem); // 將其移到列表最前面
